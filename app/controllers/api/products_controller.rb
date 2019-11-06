@@ -9,9 +9,10 @@ class Api::ProductsController < ApplicationController
     @all_products = db_extract.map do |product|
       {
         name: product.name,
-        price: product.price,
+        price: "#{product.currency_code}#{product.price.to_f}",
         stock: product.stock,
         description: product.description,
+        sale: product.on_sale,
       }
     end
     return @all_products
