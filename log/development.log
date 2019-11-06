@@ -35,3 +35,22 @@ Processing by Api::ProductsController#display_all_products as HTML
 Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms | Allocations: 3836)
 
 
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:15:51 -0600
+Processing by Api::ProductsController#display_all_products as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2263)
+
+
+  
+NameError (uninitialized constant ApplicationController::Products):
+  
+app/controllers/application_controller.rb:4:in `get_db_extract'
+app/controllers/application_controller.rb:8:in `display_all_products'
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:16:01 -0600
+Processing by Api::ProductsController#display_all_products as HTML
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 0.3ms | Allocations: 59)
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:9:in `display_all_products'
+Completed 200 OK in 31ms (Views: 22.3ms | ActiveRecord: 5.1ms | Allocations: 10732)
+
+
