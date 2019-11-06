@@ -216,3 +216,299 @@ Completed 200 OK in 26ms (Views: 2.3ms | ActiveRecord: 7.3ms | Allocations: 9699
 Completed 200 OK in 22ms (Views: 1.7ms | ActiveRecord: 15.1ms | Allocations: 9449)
 
 
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:39:27 -0600
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:39:27 -0600
+Processing by Api::ProductsController#display_all_products as */*
+Processing by Api::ProductsController#display_all_products as */*
+Processing by Api::ProductsController#display_all_products as */*
+Processing by Api::ProductsController#display_all_products as */*
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mProduct Load (2.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:10:in `map'
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:10:in `map'
+  ↳ app/controllers/application_controller.rb:10:in `map'
+  ↳ app/controllers/application_controller.rb:10:in `map'
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 31ms (Views: 1.2ms | ActiveRecord: 6.6ms | Allocations: 9996)
+
+
+  Rendering api/products/all_products.json.jb
+  Rendering api/products/all_products.json.jb
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 0.1ms | Allocations: 4)
+  Rendered api/products/all_products.json.jb (Duration: 0.0ms | Allocations: 4)
+  Rendered api/products/all_products.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 36ms (Views: 3.2ms | ActiveRecord: 24.2ms | Allocations: 11512)
+
+
+Completed 200 OK in 34ms (Views: 3.3ms | ActiveRecord: 25.6ms | Allocations: 11438)
+
+
+Completed 200 OK in 39ms (Views: 3.5ms | ActiveRecord: 25.7ms | Allocations: 12386)
+
+
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:46:03 -0600
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:46:03 -0600
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:46:03 -0600
+Processing by Api::ProductsController#display_all_products as */*
+Processing by Api::ProductsController#display_all_products as */*
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:10:in `map'
+  ↳ app/controllers/application_controller.rb:10:in `map'
+  Rendering api/products/all_products.json.jb
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 0.0ms | Allocations: 6)
+  Rendered api/products/all_products.json.jb (Duration: 0.4ms | Allocations: 70)
+Completed 200 OK in 37ms (Views: 5.5ms | ActiveRecord: 1.2ms | Allocations: 9895)
+
+
+Completed 200 OK in 40ms (Views: 7.4ms | ActiveRecord: 1.9ms | Allocations: 10470)
+
+
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:47:05 -0600
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:47:05 -0600
+Processing by Api::ProductsController#display_all_products as */*
+Processing by Api::ProductsController#display_all_products as */*
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:47:05 -0600
+  Rendering api/products/all_products.json.jb
+Processing by Api::ProductsController#display_all_products as */*
+  Rendered api/products/all_products.json.jb (Duration: 1.0ms | Allocations: 345)
+  Rendering api/products/all_products.json.jb
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 0.0ms | Allocations: 5)
+  Rendered api/products/all_products.json.jb (Duration: 0.0ms | Allocations: 5)
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:22:in `display_all_products'
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:22:in `display_all_products'
+  [1m[36mProduct Load (5.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:22:in `display_all_products'
+Completed 200 OK in 51ms (Views: 31.1ms | ActiveRecord: 18.3ms | Allocations: 14697)
+
+
+Completed 200 OK in 47ms (Views: 20.3ms | ActiveRecord: 26.1ms | Allocations: 13518)
+
+
+Completed 200 OK in 39ms (Views: 12.2ms | ActiveRecord: 26.6ms | Allocations: 11260)
+
+
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:49:12 -0600
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:49:12 -0600
+Processing by Api::ProductsController#display_all_products as */*
+Processing by Api::ProductsController#display_all_products as */*
+Processing by Api::ProductsController#display_all_products as */*
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:49:12 -0600
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:13:in `map'
+  [1m[36mProduct Load (2.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:13:in `map'
+  ↳ app/controllers/application_controller.rb:13:in `map'
+  Rendering api/products/all_products.json.jb
+  Rendering api/products/all_products.json.jb
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 0.8ms | Allocations: 87)
+  Rendered api/products/all_products.json.jb (Duration: 0.8ms | Allocations: 115)
+Completed 200 OK in 48ms (Views: 9.8ms | ActiveRecord: 6.6ms | Allocations: 11729)
+
+
+Completed 200 OK in 48ms (Views: 9.4ms | ActiveRecord: 30.9ms | Allocations: 11815)
+
+
+  Rendered api/products/all_products.json.jb (Duration: 0.7ms | Allocations: 90)
+Completed 200 OK in 52ms (Views: 8.8ms | ActiveRecord: 37.1ms | Allocations: 12880)
+
+
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:57:29 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#display_all_products as */*
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 3.9ms | Allocations: 173)
+Completed 200 OK in 45ms (Views: 24.9ms | ActiveRecord: 6.0ms | Allocations: 11104)
+
+
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:57:51 -0600
+Processing by Api::ProductsController#display_all_products as */*
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 22ms (Views: 1.1ms | ActiveRecord: 5.4ms | Allocations: 8366)
+
+
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:58:34 -0600
+  
+SyntaxError (/Users/nezumi/Actualize/mini_capstone/app/controllers/api/products_controller.rb:13: syntax error, unexpected =>, expecting end
+      =>
+      ^~
+/Users/nezumi/Actualize/mini_capstone/app/controllers/api/products_controller.rb:20: Invalid return in class/module body
+    return @all_products
+    ^~~~~~
+/Users/nezumi/Actualize/mini_capstone/app/controllers/api/products_controller.rb:27: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/api/products_controller.rb:13: syntax error, unexpected =>, expecting end
+app/controllers/api/products_controller.rb:20: Invalid return in class/module body
+app/controllers/api/products_controller.rb:27: syntax error, unexpected end, expecting end-of-input
+app/controllers/api/products_controller.rb:13: syntax error, unexpected =>, expecting end
+app/controllers/api/products_controller.rb:20: Invalid return in class/module body
+app/controllers/api/products_controller.rb:27: syntax error, unexpected end, expecting end-of-input
+app/controllers/api/products_controller.rb:13: syntax error, unexpected =>, expecting end
+app/controllers/api/products_controller.rb:20: Invalid return in class/module body
+app/controllers/api/products_controller.rb:27: syntax error, unexpected end, expecting end-of-input
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:58:59 -0600
+  
+SyntaxError (/Users/nezumi/Actualize/mini_capstone/app/controllers/api/products_controller.rb:12: syntax error, unexpected ':', expecting end
+      }:
+       ^
+/Users/nezumi/Actualize/mini_capstone/app/controllers/api/products_controller.rb:19: Invalid return in class/module body
+    return @all_products
+    ^~~~~~
+/Users/nezumi/Actualize/mini_capstone/app/controllers/api/products_controller.rb:26: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/api/products_controller.rb:12: syntax error, unexpected ':', expecting end
+app/controllers/api/products_controller.rb:19: Invalid return in class/module body
+app/controllers/api/products_controller.rb:26: syntax error, unexpected end, expecting end-of-input
+app/controllers/api/products_controller.rb:12: syntax error, unexpected ':', expecting end
+app/controllers/api/products_controller.rb:19: Invalid return in class/module body
+app/controllers/api/products_controller.rb:26: syntax error, unexpected end, expecting end-of-input
+app/controllers/api/products_controller.rb:12: syntax error, unexpected ':', expecting end
+app/controllers/api/products_controller.rb:19: Invalid return in class/module body
+app/controllers/api/products_controller.rb:26: syntax error, unexpected end, expecting end-of-input
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:59:14 -0600
+  
+SyntaxError (/Users/nezumi/Actualize/mini_capstone/app/controllers/api/products_controller.rb:12: syntax error, unexpected ':', expecting =>
+      }:
+       ^
+/Users/nezumi/Actualize/mini_capstone/app/controllers/api/products_controller.rb:17: syntax error, unexpected '}', expecting end
+      }}
+       ^):
+  
+app/controllers/api/products_controller.rb:12: syntax error, unexpected ':', expecting =>
+app/controllers/api/products_controller.rb:17: syntax error, unexpected '}', expecting end
+app/controllers/api/products_controller.rb:12: syntax error, unexpected ':', expecting =>
+app/controllers/api/products_controller.rb:17: syntax error, unexpected '}', expecting end
+app/controllers/api/products_controller.rb:12: syntax error, unexpected ':', expecting =>
+app/controllers/api/products_controller.rb:17: syntax error, unexpected '}', expecting end
+Started GET "/api/first_products" for ::1 at 2019-11-05 21:04:13 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/first_products"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.2.1) lib/puma/configuration.rb:228:in `call'
+puma (4.2.1) lib/puma/server.rb:667:in `handle_request'
+puma (4.2.1) lib/puma/server.rb:470:in `process_client'
+puma (4.2.1) lib/puma/server.rb:328:in `block in run'
+puma (4.2.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/first_product" for ::1 at 2019-11-05 21:04:24 -0600
+  
+AbstractController::ActionNotFound (The action 'display_first_product' could not be found for Api::ProductsController):
+  
+actionpack (6.0.1) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.2.1) lib/puma/configuration.rb:228:in `call'
+puma (4.2.1) lib/puma/server.rb:667:in `handle_request'
+puma (4.2.1) lib/puma/server.rb:470:in `process_client'
+puma (4.2.1) lib/puma/server.rb:328:in `block in run'
+puma (4.2.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/first_product" for ::1 at 2019-11-05 21:04:39 -0600
+Processing by Api::ProductsController#display_first_product as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 877)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/api/products_controller.rb:21:in `display_first_product'
+Started GET "/api/first_product" for ::1 at 2019-11-05 21:04:55 -0600
+Processing by Api::ProductsController#display_first_product as */*
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/first_product.json.jb
+  Rendered api/products/first_product.json.jb (Duration: 1.4ms | Allocations: 61)
+Completed 200 OK in 23ms (Views: 5.1ms | ActiveRecord: 4.6ms | Allocations: 9521)
+
+
+Started GET "/api/all_products" for ::1 at 2019-11-05 21:07:32 -0600
+Processing by Api::ProductsController#display_all_products as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 0.3ms | Allocations: 59)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 1338)
+
+
