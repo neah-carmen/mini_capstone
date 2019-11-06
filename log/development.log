@@ -54,3 +54,165 @@ Processing by Api::ProductsController#display_all_products as HTML
 Completed 200 OK in 31ms (Views: 22.3ms | ActiveRecord: 5.1ms | Allocations: 10732)
 
 
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:19:37 -0600
+  
+SyntaxError (/Users/nezumi/Actualize/mini_capstone/app/controllers/application_controller.rb:10: syntax error, unexpected ',', expecting =>
+        product.name,
+                    ^
+/Users/nezumi/Actualize/mini_capstone/app/controllers/application_controller.rb:12: syntax error, unexpected '}', expecting '='
+      }
+      ^
+/Users/nezumi/Actualize/mini_capstone/app/controllers/application_controller.rb:21: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/application_controller.rb:10: syntax error, unexpected ',', expecting =>
+app/controllers/application_controller.rb:12: syntax error, unexpected '}', expecting '='
+app/controllers/application_controller.rb:21: syntax error, unexpected end-of-input, expecting end
+app/controllers/application_controller.rb:10: syntax error, unexpected ',', expecting =>
+app/controllers/application_controller.rb:12: syntax error, unexpected '}', expecting '='
+app/controllers/application_controller.rb:21: syntax error, unexpected end-of-input, expecting end
+app/controllers/application_controller.rb:10: syntax error, unexpected ',', expecting =>
+app/controllers/application_controller.rb:12: syntax error, unexpected '}', expecting '='
+app/controllers/application_controller.rb:21: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/products_controller.rb:1:in `<main>'
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:22:28 -0600
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:23:13 -0600
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:24:27 -0600
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#display_all_products as HTML
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 2.3ms | Allocations: 173)
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:14:in `display_all_products'
+Completed 200 OK in 45ms (Views: 33.1ms | ActiveRecord: 8.4ms | Allocations: 11686)
+
+
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:24:36 -0600
+Processing by Api::ProductsController#display_all_products as */*
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 0.4ms | Allocations: 5)
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:14:in `display_all_products'
+Completed 200 OK in 19ms (Views: 14.2ms | ActiveRecord: 3.6ms | Allocations: 9069)
+
+
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:25:37 -0600
+Processing by Api::ProductsController#display_all_products as */*
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:9:in `parse_all_products'
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 0.3ms | Allocations: 63)
+Completed 200 OK in 40ms (Views: 5.5ms | ActiveRecord: 3.5ms | Allocations: 9522)
+
+
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:27:59 -0600
+Processing by Api::ProductsController#display_all_products as */*
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 0.3ms | Allocations: 59)
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:14:in `display_all_products'
+Completed 200 OK in 23ms (Views: 15.4ms | ActiveRecord: 4.0ms | Allocations: 10018)
+
+
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:29:33 -0600
+  
+SyntaxError (/Users/nezumi/Actualize/mini_capstone/app/controllers/application_controller.rb:20: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/application_controller.rb:20: syntax error, unexpected end-of-input, expecting end
+app/controllers/application_controller.rb:20: syntax error, unexpected end-of-input, expecting end
+app/controllers/application_controller.rb:20: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/products_controller.rb:1:in `<main>'
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:29:54 -0600
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:32:58 -0600
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:32:58 -0600
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:32:58 -0600
+Processing by Api::ProductsController#display_all_products as */*
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:32:58 -0600
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 896)
+
+
+  
+NoMethodError (undefined method `map' for nil:NilClass):
+  
+app/controllers/application_controller.rb:9:in `parse_all_products'
+app/controllers/application_controller.rb:19:in `display_all_products'
+Processing by Api::ProductsController#display_all_products as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 893)
+
+
+  
+NoMethodError (undefined method `map' for nil:NilClass):
+  
+app/controllers/application_controller.rb:9:in `parse_all_products'
+app/controllers/application_controller.rb:19:in `display_all_products'
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:33:39 -0600
+Processing by Api::ProductsController#display_all_products as */*
+Processing by Api::ProductsController#display_all_products as */*
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mProduct Load (2.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:10:in `map'
+  ↳ app/controllers/application_controller.rb:10:in `map'
+Processing by Api::ProductsController#display_all_products as */*
+Processing by Api::ProductsController#display_all_products as */*
+  [1m[36mProduct Load (13.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:10:in `map'
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:10:in `map'
+  Rendering api/products/all_products.json.jb
+  Rendering api/products/all_products.json.jb
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 0.1ms | Allocations: 4)
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 0.0ms | Allocations: 4)
+  Rendered api/products/all_products.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 45ms (Views: 4.1ms | ActiveRecord: 10.3ms | Allocations: 14818)
+
+
+  Rendered api/products/all_products.json.jb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 21ms (Views: 3.7ms | ActiveRecord: 14.4ms | Allocations: 9256)
+
+
+Completed 200 OK in 35ms (Views: 2.8ms | ActiveRecord: 29.3ms | Allocations: 10292)
+
+
+Completed 200 OK in 43ms (Views: 4.2ms | ActiveRecord: 19.9ms | Allocations: 15133)
+
+
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:34:33 -0600
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:35:20 -0600
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:35:20 -0600
+Processing by Api::ProductsController#display_all_products as */*
+Processing by Api::ProductsController#display_all_products as */*
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:10:in `map'
+  [1m[36mProduct Load (2.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:10:in `map'
+  Rendering api/products/all_products.json.jb
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 0.1ms | Allocations: 4)
+  Rendered api/products/all_products.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 23ms (Views: 2.0ms | ActiveRecord: 7.5ms | Allocations: 9415)
+
+
+Completed 200 OK in 22ms (Views: 1.4ms | ActiveRecord: 14.5ms | Allocations: 9171)
+
+
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:37:36 -0600
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:37:36 -0600
+Processing by Api::ProductsController#display_all_products as */*
+Processing by Api::ProductsController#display_all_products as */*
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:37:36 -0600
+Started GET "/api/all_products" for ::1 at 2019-11-05 20:37:36 -0600
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/application_controller.rb:10:in `map'
+  ↳ app/controllers/application_controller.rb:10:in `map'
+  Rendering api/products/all_products.json.jb
+  Rendering api/products/all_products.json.jb
+  Rendered api/products/all_products.json.jb (Duration: 0.1ms | Allocations: 4)
+  Rendered api/products/all_products.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 26ms (Views: 2.3ms | ActiveRecord: 7.3ms | Allocations: 9699)
+
+
+Completed 200 OK in 22ms (Views: 1.7ms | ActiveRecord: 15.1ms | Allocations: 9449)
+
+
