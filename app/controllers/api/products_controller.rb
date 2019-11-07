@@ -9,13 +9,20 @@ class Api::ProductsController < ApplicationController
     @all_products = db_extract.map do |product|
       {
         name: product.name,
-        price: "#{product.currency_code}#{product.price.to_f}",
+        price: "#{product.currency_code}#{product.price}",
         stock: product.stock,
         description: product.description,
         sale: product.on_sale,
       }
     end
     return @all_products
+  end
+
+  def display_product
+    parse_all_products
+    @id = params["id"].to_i
+    @all_products[@id]
+    render "product.json.jb"
   end
 
   def display_first_product
