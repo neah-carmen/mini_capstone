@@ -1013,3 +1013,54 @@ Completed 200 OK in 47ms (Views: 21.9ms | ActiveRecord: 5.5ms | Allocations: 110
 
 
   [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/product/1" for ::1 at 2019-11-07 10:07:31 -0600
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#display_product as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (8.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 3.9ms | Allocations: 173)
+Completed 200 OK in 69ms (Views: 24.7ms | ActiveRecord: 26.9ms | Allocations: 11047)
+
+
+Started GET "/api/product/3" for ::1 at 2019-11-07 10:07:36 -0600
+Processing by Api::ProductsController#display_product as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.8ms | Allocations: 1012)
+
+
+Started GET "/api/product/1" for ::1 at 2019-11-07 10:11:10 -0600
+Processing by Api::ProductsController#display_product as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 0.4ms | Allocations: 60)
+Completed 200 OK in 27ms (Views: 4.9ms | ActiveRecord: 5.2ms | Allocations: 9391)
+
+
+Started GET "/api/product/2" for ::1 at 2019-11-07 10:11:14 -0600
+Processing by Api::ProductsController#display_product as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 8ms (Views: 1.5ms | ActiveRecord: 0.8ms | Allocations: 1076)
+
+
+Started GET "/api/product/3" for ::1 at 2019-11-07 10:11:16 -0600
+Processing by Api::ProductsController#display_product as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 0.8ms | Allocations: 1075)
+
+
