@@ -19,10 +19,10 @@ class Api::ProductsController < ApplicationController
     return @all_products
   end
 
-  def display_product
+  def select_product_by_id
     all_products = parse_all_products()
     id = params["id"].to_i
-    @product = all_products.select do |product|
+    @product_by_id = all_products.select do |product|
       product[:id] == id
     end
     render "product.json.jb"

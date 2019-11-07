@@ -1064,3 +1064,222 @@ Processing by Api::ProductsController#display_product as HTML
 Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 0.8ms | Allocations: 1075)
 
 
+Started GET "/api/product/1" for ::1 at 2019-11-07 11:51:00 -0600
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#display_product as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (8.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 3.8ms | Allocations: 173)
+Completed 200 OK in 72ms (Views: 23.8ms | ActiveRecord: 14.4ms | Allocations: 11105)
+
+
+Started GET "/api/product/1" for ::1 at 2019-11-07 11:52:47 -0600
+Processing by Api::ProductsController#get_product_by_id as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 20ms (Views: 1.1ms | ActiveRecord: 3.8ms | Allocations: 8349)
+
+
+Started GET "/api/product/2" for ::1 at 2019-11-07 11:52:51 -0600
+Processing by Api::ProductsController#get_product_by_id as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.4ms | Allocations: 1097)
+
+
+Started GET "/api/product/3" for ::1 at 2019-11-07 11:52:54 -0600
+Processing by Api::ProductsController#get_product_by_id as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 1097)
+
+
+Started GET "/api/product/sale" for ::1 at 2019-11-07 11:58:03 -0600
+Processing by Api::ProductsController#check_product_sale as */*
+  Parameters: {"sale"=>"sale"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+No template found for Api::ProductsController#check_product_sale, rendering head :no_content
+Completed 204 No Content in 21ms (ActiveRecord: 0.7ms | Allocations: 9200)
+
+
+Started GET "/api/product/sale" for ::1 at 2019-11-07 11:58:20 -0600
+Processing by Api::ProductsController#check_product_sale as */*
+  Parameters: {"sale"=>"sale"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+No template found for Api::ProductsController#check_product_sale, rendering head :no_content
+Completed 204 No Content in 26ms (ActiveRecord: 10.1ms | Allocations: 7950)
+
+
+Started GET "/api/product/sale" for ::1 at 2019-11-07 11:58:58 -0600
+Processing by Api::ProductsController#check_product_sale as */*
+  Parameters: {"sale"=>"sale"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 4.4ms | Allocations: 8440)
+
+
+  
+ArgumentError ('{:id=>3, :name=>"Circle Skirt", :price=>"$29", :stock=>4, :description=>"Calf length full circle skirt", :sale=>true}' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+  
+app/controllers/api/products_controller.rb:39:in `check_product_sale'
+Started GET "/api/product/sale" for ::1 at 2019-11-07 11:59:27 -0600
+Processing by Api::ProductsController#check_product_sale as */*
+  Parameters: {"sale"=>"sale"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 3.8ms | Allocations: 8576)
+
+
+  
+ArgumentError ('{:id=>3, :name=>"Circle Skirt", :price=>"$29", :stock=>4, :description=>"Calf length full circle skirt", :sale=>true}' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+  
+app/controllers/api/products_controller.rb:39:in `check_product_sale'
+Started GET "/api/product/sale" for ::1 at 2019-11-07 12:00:51 -0600
+Processing by Api::ProductsController#check_product_sale as */*
+  Parameters: {"sale"=>"sale"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 32ms (Views: 1.2ms | ActiveRecord: 3.9ms | Allocations: 8372)
+
+
+Started GET "/api/product/1" for ::1 at 2019-11-07 12:01:44 -0600
+Processing by Api::ProductsController#check_product_sale as */*
+  Parameters: {"sale"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 1080)
+
+
+Started GET "/api/product/2" for ::1 at 2019-11-07 12:01:48 -0600
+Processing by Api::ProductsController#check_product_sale as */*
+  Parameters: {"sale"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.4ms | Allocations: 1080)
+
+
+Started GET "/api/product/sale" for ::1 at 2019-11-07 12:02:30 -0600
+Processing by Api::ProductsController#get_product_by_id as */*
+  Parameters: {"id"=>"sale"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 18ms (Views: 1.2ms | ActiveRecord: 3.7ms | Allocations: 8225)
+
+
+Started GET "/api/product/1" for ::1 at 2019-11-07 12:03:43 -0600
+  
+AbstractController::ActionNotFound (The action 'display_product' could not be found for Api::ProductsController):
+  
+actionpack (6.0.1) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.2.1) lib/puma/configuration.rb:228:in `call'
+puma (4.2.1) lib/puma/server.rb:667:in `handle_request'
+puma (4.2.1) lib/puma/server.rb:470:in `process_client'
+puma (4.2.1) lib/puma/server.rb:328:in `block in run'
+puma (4.2.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/product/1" for ::1 at 2019-11-07 12:04:13 -0600
+Processing by Api::ProductsController#get_product_by_id as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 32ms (Views: 1.3ms | ActiveRecord: 5.4ms | Allocations: 8365)
+
+
+Started GET "/api/product/2" for ::1 at 2019-11-07 12:04:17 -0600
+Processing by Api::ProductsController#get_product_by_id as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 1080)
+
+
+Started GET "/api/product/3" for ::1 at 2019-11-07 12:04:19 -0600
+Processing by Api::ProductsController#get_product_by_id as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.4ms | Allocations: 1080)
+
+
+Started GET "/api/product/3" for ::1 at 2019-11-07 12:05:34 -0600
+Processing by Api::ProductsController#get_product_by_id as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:9:in `map'
+  Rendering api/products/product.json.jb
+  Rendered api/products/product.json.jb (Duration: 0.4ms | Allocations: 60)
+Completed 200 OK in 26ms (Views: 7.1ms | ActiveRecord: 4.4ms | Allocations: 9423)
+
+
