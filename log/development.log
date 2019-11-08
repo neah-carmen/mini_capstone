@@ -1530,3 +1530,115 @@ Processing by Api::ProductsController#show as */*
 Completed 200 OK in 37ms (Views: 12.5ms | ActiveRecord: 6.4ms | Allocations: 10617)
 
 
+Started GET "/api/products/1" for ::1 at 2019-11-07 20:56:48 -0600
+Processing by Api::ProductsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 1.7ms | Allocations: 63)
+Completed 200 OK in 24ms (Views: 8.1ms | ActiveRecord: 0.8ms | Allocations: 9240)
+
+
+Started GET "/api/products/2" for ::1 at 2019-11-07 20:56:52 -0600
+Processing by Api::ProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.4ms | Allocations: 1095)
+
+
+Started GET "/api/products/3" for ::1 at 2019-11-07 20:56:56 -0600
+Processing by Api::ProductsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 1077)
+
+
+Started GET "/api/products/3" for ::1 at 2019-11-07 20:59:30 -0600
+Processing by Api::ProductsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 1.5ms | Allocations: 59)
+Completed 200 OK in 29ms (Views: 8.3ms | ActiveRecord: 8.1ms | Allocations: 9356)
+
+
+Started GET "/api/products/3" for ::1 at 2019-11-07 20:59:40 -0600
+Processing by Api::ProductsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 34ms (Views: 1.1ms | ActiveRecord: 5.4ms | Allocations: 8336)
+
+
+Started GET "/api/products/1" for ::1 at 2019-11-07 20:59:44 -0600
+Processing by Api::ProductsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 1077)
+
+
+Started GET "/api/products/2" for ::1 at 2019-11-07 20:59:47 -0600
+Processing by Api::ProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1077)
+
+
+Started POST "/api/products?id=1" for ::1 at 2019-11-07 21:18:26 -0600
+Processing by Api::ProductsController#create as */*
+  Parameters: {"id"=>"1"}
+Can't verify CSRF token authenticity.
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 549)
+
+
+Started POST "/api/products" for ::1 at 2019-11-07 21:18:40 -0600
+Processing by Api::ProductsController#create as */*
+  Parameters: {"id"=>"1"}
+Can't verify CSRF token authenticity.
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started POST "/api/products" for ::1 at 2019-11-07 21:19:26 -0600
+Processing by Api::ProductsController#create as */*
+  Parameters: {"id"=>"1"}
+Can't verify CSRF token authenticity.
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 545)
+
+
+Started POST "/api/products" for ::1 at 2019-11-07 21:23:53 -0600
+Processing by Api::ProductsController#create as */*
+  Parameters: {"name"=>"Test Name", "price"=>"42", "currency_code"=>"$", "stock"=>"10", "description"=>"Test Description"}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/products_controller.rb:35:in `create'
+  [1m[36mProduct Create (5.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "currency_code", "stock", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Test Name"], ["price", 42], ["currency_code", "$"], ["stock", 10], ["description", "Test Description"], ["created_at", "2019-11-08 03:23:53.961239"], ["updated_at", "2019-11-08 03:23:53.961239"]]
+  ↳ app/controllers/api/products_controller.rb:35:in `create'
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/products_controller.rb:35:in `create'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 38ms (Views: 2.9ms | ActiveRecord: 16.6ms | Allocations: 10287)
+
+

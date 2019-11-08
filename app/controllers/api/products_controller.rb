@@ -1,7 +1,6 @@
 class Api::ProductsController < ApplicationController
   def get_db_extract
     db_extract = Product.all
-    return db_extract
   end
 
   def parse_all_products
@@ -16,7 +15,25 @@ class Api::ProductsController < ApplicationController
         sale: product.on_sale,
       }
     end
-    return @all_products
+  end
+
+  def index
+    parse_all_products()
+    render "index.json.jb"
+  end
+
+  def create
+    @product_by_id = Product.new(
+      name: params[:name],
+      price: params[:price],
+      currency_code: params[:currency_code],
+      stock: params[:stock],
+      image_url: params[:image_url],
+      description: params[:description],
+      on_sale: params[:on_sale],
+    )
+    @product_by_id.save
+    render "show.json.jb"
   end
 
   def show
@@ -27,10 +44,5 @@ class Api::ProductsController < ApplicationController
     end
     @product_by_id = @product_by_id[0]
     render "show.json.jb"
-  end
-
-  def index
-    parse_all_products()
-    render "index.json.jb"
   end
 end
