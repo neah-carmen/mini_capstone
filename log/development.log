@@ -1642,3 +1642,124 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 38ms (Views: 2.9ms | ActiveRecord: 16.6ms | Allocations: 10287)
 
 
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (256.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "mini_capstone_development"[0m
+  [1m[35m (235.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "mini_capstone_test"[0m
+  [1m[35m (563.4ms)[0m  [1m[35mCREATE DATABASE "mini_capstone_development" ENCODING = 'unicode'[0m
+  [1m[35m (426.3ms)[0m  [1m[35mCREATE DATABASE "mini_capstone_test" ENCODING = 'unicode'[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4423496750447225430)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProducts (20191106020302)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "price" integer, "currency_code" character varying, "stock" integer, "image_url" character varying, "description" character varying, "on_sale" boolean, "discount" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106020302"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-10 19:01:41.669081"], ["updated_at", "2019-11-10 19:01:41.669081"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4423496750447225430)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (1.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "currency_code", "stock", "image_url", "description", "on_sale", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Petticoat"], ["price", 19], ["currency_code", "$"], ["stock", 2], ["image_url", "www.google.com"], ["description", "Wear underneath skirt to add body."], ["on_sale", false], ["created_at", "2019-11-10 19:01:41.812396"], ["updated_at", "2019-11-10 19:01:41.812396"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "currency_code", "stock", "image_url", "description", "on_sale", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Blouse"], ["price", 24], ["currency_code", "$"], ["stock", 9], ["image_url", "www.google.com"], ["description", "Long sleeve blouse with standing collar"], ["on_sale", false], ["created_at", "2019-11-10 19:01:41.823123"], ["updated_at", "2019-11-10 19:01:41.823123"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "currency_code", "stock", "image_url", "description", "on_sale", "discount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Circle Skirt"], ["price", 29], ["currency_code", "$"], ["stock", 4], ["image_url", "www.google.com"], ["description", "Calf length full circle skirt"], ["on_sale", true], ["discount", 10], ["created_at", "2019-11-10 19:01:41.830895"], ["updated_at", "2019-11-10 19:01:41.830895"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/products" for ::1 at 2019-11-10 13:01:54 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#index as HTML
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/index.json.jb
+  Rendered api/products/index.json.jb (Duration: 4.1ms | Allocations: 173)
+Completed 200 OK in 56ms (Views: 28.2ms | ActiveRecord: 5.2ms | Allocations: 11212)
+
+
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/api/products" for ::1 at 2019-11-10 13:08:18 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#index as */*
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/index.json.jb
+  Rendered api/products/index.json.jb (Duration: 2.8ms | Allocations: 173)
+Completed 200 OK in 58ms (Views: 28.6ms | ActiveRecord: 5.6ms | Allocations: 11256)
+
+
+Started GET "/api/products/3" for ::1 at 2019-11-10 13:08:22 -0600
+Processing by Api::ProductsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms | Allocations: 1648)
+
+
+  
+NoMethodError (private method `select' called for :destroy:Symbol):
+  
+app/controllers/api/products_controller.rb:63:in `show'
+Started GET "/api/products/3" for ::1 at 2019-11-10 13:08:51 -0600
+Processing by Api::ProductsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 1690)
+
+
+  
+NoMethodError (private method `select' called for :destroy:Symbol):
+  
+app/controllers/api/products_controller.rb:63:in `show'
+Started GET "/api/products/3" for ::1 at 2019-11-10 13:10:26 -0600
+Processing by Api::ProductsController#show as */*
+  Parameters: {"id"=>"3"}
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 1.5ms | Allocations: 63)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 598)
+
+
+Started GET "/api/products" for ::1 at 2019-11-10 13:10:31 -0600
+Processing by Api::ProductsController#index as */*
+  Rendering api/products/index.json.jb
+  Rendered api/products/index.json.jb (Duration: 1.5ms | Allocations: 60)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 395)
+
+
+Started GET "/api/products" for ::1 at 2019-11-10 13:10:41 -0600
+Processing by Api::ProductsController#index as */*
+  Rendering api/products/index.json.jb
+  Rendered api/products/index.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 341)
+
+
+Started GET "/api/products" for ::1 at 2019-11-10 13:13:06 -0600
+Processing by Api::ProductsController#index as */*
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/index.json.jb
+  Rendered api/products/index.json.jb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 20ms (Views: 1.2ms | ActiveRecord: 3.5ms | Allocations: 8619)
+
+
+Started GET "/api/products/3" for ::1 at 2019-11-10 13:13:11 -0600
+Processing by Api::ProductsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.4ms | Allocations: 60)
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1306)
+
+
