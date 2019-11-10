@@ -9,11 +9,32 @@ class Api::ProductsController < ApplicationController
       {
         id: product.id,
         name: product.name,
-        price: "#{product.currency_code}#{product.price}",
+        # formatted_price: "#{product.currency_code}#{product.price}",
+        price: product.price,
         stock: product.stock,
+        image_url: product.image_url,
         description: product.description,
         sale: product.on_sale,
       }
+    end
+
+    def update
+      @product_by_id = Product.find_by(id: params[:id])
+      @product_by_id.name = params[:name] || @product_by_id.name
+      @product_by_id.price = params[:price] || @product_by_id.price
+      @product_by_id.currency_code = params[:currency_code] || @product_by_id.currency_code
+      @product_by_id.stock = params[:stock] || @product_by_id.stock
+      @product_by_id.image_url = params[:image_url] || @product_by_id.image_url
+      @product_by_id.description = params[:description] || @product_by_id.description
+      @product_by_id.on_sale = params[:on_sale] || @product_by_id.on_sale
+      @product_by_id.save
+      render "show.json.jb"
+    end
+
+    def destroy
+      @product_by_id = Product.find_by(id: params[:id])
+      @product_by_id.destroy
+      render json: { message: "Product successfully deleted." }
     end
   end
 
