@@ -1763,3 +1763,417 @@ Processing by Api::ProductsController#show as */*
 Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1306)
 
 
+Started POST "/api/products" for ::1 at 2019-11-10 13:33:43 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#create as */*
+  Parameters: {"name"=>"Bustle", "price"=>"34..99", "currency_code"=>"$", "stock"=>"1", "image_url"=>"www.google.com", "description"=>"Wear underneath skirt to add body.", "on_sale"=>"false", "discount"=>"nil"}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/products_controller.rb:37:in `create'
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "currency_code", "stock", "image_url", "description", "on_sale", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Bustle"], ["price", 34], ["currency_code", "$"], ["stock", 1], ["image_url", "www.google.com"], ["description", "Wear underneath skirt to add body."], ["on_sale", false], ["created_at", "2019-11-10 19:33:43.610041"], ["updated_at", "2019-11-10 19:33:43.610041"]]
+  ↳ app/controllers/api/products_controller.rb:37:in `create'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/products_controller.rb:37:in `create'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 3.8ms | Allocations: 173)
+Completed 200 OK in 66ms (Views: 32.1ms | ActiveRecord: 8.1ms | Allocations: 12872)
+
+
+Started DELETE "/api/products/4" for ::1 at 2019-11-10 13:33:51 -0600
+Processing by Api::ProductsController#destroy as */*
+  Parameters: {"id"=>"4"}
+Can't verify CSRF token authenticity.
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:65:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/products_controller.rb:66:in `destroy'
+  [1m[36mProduct Destroy (0.5ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/api/products_controller.rb:66:in `destroy'
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/products_controller.rb:66:in `destroy'
+Completed 200 OK in 28ms (Views: 0.7ms | ActiveRecord: 8.4ms | Allocations: 2979)
+
+
+Started GET "/api/products" for ::1 at 2019-11-10 13:33:55 -0600
+Processing by Api::ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/index.json.jb
+  Rendered api/products/index.json.jb (Duration: 1.7ms | Allocations: 62)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.3ms | Allocations: 2532)
+
+
+Started GET "/api/products" for ::1 at 2019-11-10 13:41:50 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#index as HTML
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/index.json.jb
+  Rendered api/products/index.json.jb (Duration: 4.0ms | Allocations: 173)
+Completed 200 OK in 61ms (Views: 28.0ms | ActiveRecord: 5.6ms | Allocations: 11210)
+
+
+Started GET "/api/products/3" for ::1 at 2019-11-10 13:50:07 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 1.5ms | Allocations: 63)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.9ms | Allocations: 1378)
+
+
+Started GET "/api/products/3" for ::1 at 2019-11-10 13:50:09 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (6.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 6.2ms | Allocations: 1095)
+
+
+Started PATCH "/api/products/3" for ::1 at 2019-11-10 13:50:12 -0600
+Processing by Api::ProductsController#update as HTML
+  Parameters: {"name"=>"Circle Skirt", "price"=>29, "image_url"=>"https://res.cloudinary.com/puereveryday/image/upload/v1573415394/actualize/j8soywum2jdee3rv2jbt.jpg", "description"=>"Calf length full circle skirt", "id"=>"3", "product"=>{"name"=>"Circle Skirt", "price"=>29, "image_url"=>"https://res.cloudinary.com/puereveryday/image/upload/v1573415394/actualize/j8soywum2jdee3rv2jbt.jpg", "description"=>"Calf length full circle skirt"}}
+HTTP Origin header (https://mini-capstone.netlify.com) didn't match request.base_url (http://localhost:3000)
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:52:in `update'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  [1m[36mProduct Update (1.9ms)[0m  [1m[33mUPDATE "products" SET "image_url" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["image_url", "https://res.cloudinary.com/puereveryday/image/upload/v1573415394/actualize/j8soywum2jdee3rv2jbt.jpg"], ["updated_at", "2019-11-10 19:50:12.995979"], ["id", 3]]
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  [1m[35m (13.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 45ms (Views: 3.3ms | ActiveRecord: 16.4ms | Allocations: 5997)
+
+
+Started GET "/api/products/3" for ::1 at 2019-11-10 13:50:13 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (1.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 1.9ms | Allocations: 1077)
+
+
+Started GET "/api/products" for ::1 at 2019-11-10 13:50:25 -0600
+Processing by Api::ProductsController#index as HTML
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/index.json.jb
+  Rendered api/products/index.json.jb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 1.0ms | Allocations: 1256)
+
+
+Started GET "/api/products/1" for ::1 at 2019-11-10 13:50:27 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.2ms | Allocations: 4)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1077)
+
+
+Started GET "/api/products/1" for ::1 at 2019-11-10 13:50:29 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (2.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 2.4ms | Allocations: 1077)
+
+
+Started PATCH "/api/products/1" for ::1 at 2019-11-10 13:50:32 -0600
+Processing by Api::ProductsController#update as HTML
+  Parameters: {"name"=>"Petticoat", "price"=>19, "image_url"=>"https://res.cloudinary.com/puereveryday/image/upload/v1573415393/actualize/v1gvg9xicsno8hmvkw9o.jpg", "description"=>"Wear underneath skirt to add body.", "id"=>"1", "product"=>{"name"=>"Petticoat", "price"=>19, "image_url"=>"https://res.cloudinary.com/puereveryday/image/upload/v1573415393/actualize/v1gvg9xicsno8hmvkw9o.jpg", "description"=>"Wear underneath skirt to add body."}}
+HTTP Origin header (https://mini-capstone.netlify.com) didn't match request.base_url (http://localhost:3000)
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:52:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  [1m[36mProduct Update (0.4ms)[0m  [1m[33mUPDATE "products" SET "image_url" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["image_url", "https://res.cloudinary.com/puereveryday/image/upload/v1573415393/actualize/v1gvg9xicsno8hmvkw9o.jpg"], ["updated_at", "2019-11-10 19:50:32.980245"], ["id", 1]]
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 13ms (Views: 2.1ms | ActiveRecord: 4.4ms | Allocations: 3209)
+
+
+Started GET "/api/products/1" for ::1 at 2019-11-10 13:50:33 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.7ms | Allocations: 1078)
+
+
+Started GET "/api/products" for ::1 at 2019-11-10 13:50:34 -0600
+Processing by Api::ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/index.json.jb
+  Rendered api/products/index.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 1239)
+
+
+Started GET "/api/products/3" for ::1 at 2019-11-10 13:51:26 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (4.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.2ms | Allocations: 4)
+Completed 200 OK in 9ms (Views: 1.7ms | ActiveRecord: 4.4ms | Allocations: 1078)
+
+
+Started GET "/api/products/3" for ::1 at 2019-11-10 13:51:29 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 1078)
+
+
+Started PATCH "/api/products/3" for ::1 at 2019-11-10 13:51:32 -0600
+Processing by Api::ProductsController#update as HTML
+  Parameters: {"name"=>"Circle Skirt", "price"=>29, "image_url"=>"https://res.cloudinary.com/puereveryday/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1573415394/actualize/j8soywum2jdee3rv2jbt.jpg", "description"=>"Calf length full circle skirt", "id"=>"3", "product"=>{"name"=>"Circle Skirt", "price"=>29, "image_url"=>"https://res.cloudinary.com/puereveryday/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1573415394/actualize/j8soywum2jdee3rv2jbt.jpg", "description"=>"Calf length full circle skirt"}}
+HTTP Origin header (https://mini-capstone.netlify.com) didn't match request.base_url (http://localhost:3000)
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:52:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  [1m[36mProduct Update (0.5ms)[0m  [1m[33mUPDATE "products" SET "image_url" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["image_url", "https://res.cloudinary.com/puereveryday/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1573415394/actualize/j8soywum2jdee3rv2jbt.jpg"], ["updated_at", "2019-11-10 19:51:32.371134"], ["id", 3]]
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 10ms (Views: 1.4ms | ActiveRecord: 2.3ms | Allocations: 3210)
+
+
+Started GET "/api/products/3" for ::1 at 2019-11-10 13:51:32 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.7ms | Allocations: 1079)
+
+
+Started GET "/api/products" for ::1 at 2019-11-10 13:51:36 -0600
+Processing by Api::ProductsController#index as HTML
+  [1m[36mProduct Load (4.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/index.json.jb
+  Rendered api/products/index.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 10ms (Views: 1.8ms | ActiveRecord: 4.3ms | Allocations: 1239)
+
+
+Started GET "/api/products/3" for ::1 at 2019-11-10 13:51:59 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 1078)
+
+
+Started GET "/api/products/3" for ::1 at 2019-11-10 13:52:01 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 0.6ms | Allocations: 1078)
+
+
+Started PATCH "/api/products/3" for ::1 at 2019-11-10 13:52:04 -0600
+Processing by Api::ProductsController#update as HTML
+  Parameters: {"name"=>"Circle Skirt", "price"=>29, "image_url"=>"https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415394/actualize/j8soywum2jdee3rv2jbt.jpg", "description"=>"Calf length full circle skirt", "id"=>"3", "product"=>{"name"=>"Circle Skirt", "price"=>29, "image_url"=>"https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415394/actualize/j8soywum2jdee3rv2jbt.jpg", "description"=>"Calf length full circle skirt"}}
+HTTP Origin header (https://mini-capstone.netlify.com) didn't match request.base_url (http://localhost:3000)
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:52:in `update'
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  [1m[36mProduct Update (0.9ms)[0m  [1m[33mUPDATE "products" SET "image_url" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["image_url", "https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415394/actualize/j8soywum2jdee3rv2jbt.jpg"], ["updated_at", "2019-11-10 19:52:04.569130"], ["id", 3]]
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 14ms (Views: 1.3ms | ActiveRecord: 4.7ms | Allocations: 3210)
+
+
+Started GET "/api/products/3" for ::1 at 2019-11-10 13:52:04 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.8ms | Allocations: 1078)
+
+
+Started GET "/api/products" for ::1 at 2019-11-10 13:52:08 -0600
+Processing by Api::ProductsController#index as HTML
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/index.json.jb
+  Rendered api/products/index.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 1.0ms | Allocations: 1239)
+
+
+Started GET "/api/products/1" for ::1 at 2019-11-10 13:52:46 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 0.5ms | Allocations: 1078)
+
+
+Started GET "/api/products/1" for ::1 at 2019-11-10 13:52:47 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (5.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.2ms | Allocations: 4)
+Completed 200 OK in 12ms (Views: 2.4ms | ActiveRecord: 5.8ms | Allocations: 1078)
+
+
+Started PATCH "/api/products/1" for ::1 at 2019-11-10 13:52:50 -0600
+Processing by Api::ProductsController#update as HTML
+  Parameters: {"name"=>"Petticoat", "price"=>19, "image_url"=>"https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415393/actualize/v1gvg9xicsno8hmvkw9o.jpg", "description"=>"Wear underneath skirt to add body.", "id"=>"1", "product"=>{"name"=>"Petticoat", "price"=>19, "image_url"=>"https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415393/actualize/v1gvg9xicsno8hmvkw9o.jpg", "description"=>"Wear underneath skirt to add body."}}
+HTTP Origin header (https://mini-capstone.netlify.com) didn't match request.base_url (http://localhost:3000)
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:52:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  [1m[36mProduct Update (0.5ms)[0m  [1m[33mUPDATE "products" SET "image_url" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["image_url", "https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415393/actualize/v1gvg9xicsno8hmvkw9o.jpg"], ["updated_at", "2019-11-10 19:52:50.512026"], ["id", 1]]
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 12ms (Views: 1.1ms | ActiveRecord: 2.5ms | Allocations: 3210)
+
+
+Started GET "/api/products/1" for ::1 at 2019-11-10 13:52:50 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 1078)
+
+
+Started GET "/api/products" for ::1 at 2019-11-10 13:52:53 -0600
+Processing by Api::ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/index.json.jb
+  Rendered api/products/index.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 1239)
+
+
+Started GET "/api/products" for ::1 at 2019-11-10 13:53:42 -0600
+Processing by Api::ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/index.json.jb
+  Rendered api/products/index.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1394)
+
+
+Started GET "/api/products/2" for ::1 at 2019-11-10 13:58:12 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 1083)
+
+
+Started GET "/api/products/2" for ::1 at 2019-11-10 13:58:13 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 1078)
+
+
+Started PATCH "/api/products/2" for ::1 at 2019-11-10 13:58:16 -0600
+Processing by Api::ProductsController#update as HTML
+  Parameters: {"name"=>"Blouse", "price"=>24, "image_url"=>"https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415877/actualize/s9ytfrm1hu7a8iyroa28.jpg", "description"=>"Long sleeve blouse with standing collar", "id"=>"2", "product"=>{"name"=>"Blouse", "price"=>24, "image_url"=>"https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415877/actualize/s9ytfrm1hu7a8iyroa28.jpg", "description"=>"Long sleeve blouse with standing collar"}}
+HTTP Origin header (https://mini-capstone.netlify.com) didn't match request.base_url (http://localhost:3000)
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:52:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  [1m[36mProduct Update (0.4ms)[0m  [1m[33mUPDATE "products" SET "image_url" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["image_url", "https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415877/actualize/s9ytfrm1hu7a8iyroa28.jpg"], ["updated_at", "2019-11-10 19:58:16.851840"], ["id", 2]]
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/products_controller.rb:60:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 10ms (Views: 1.0ms | ActiveRecord: 2.4ms | Allocations: 3207)
+
+
+Started GET "/api/products/2" for ::1 at 2019-11-10 13:58:16 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 1079)
+
+
+Started GET "/api/products" for ::1 at 2019-11-10 13:58:19 -0600
+Processing by Api::ProductsController#index as HTML
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/index.json.jb
+  Rendered api/products/index.json.jb (Duration: 0.2ms | Allocations: 4)
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 0.7ms | Allocations: 1240)
+
+
+Started GET "/api/products/2" for ::1 at 2019-11-10 13:58:36 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/show.json.jb
+  Rendered api/products/show.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 1079)
+
+
+Started GET "/api/products" for ::1 at 2019-11-10 13:59:20 -0600
+Processing by Api::ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/api/products_controller.rb:8:in `map'
+  Rendering api/products/index.json.jb
+  Rendered api/products/index.json.jb (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 1240)
+
+
