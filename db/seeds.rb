@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-product = Product.new(
+product = Product.create(
   name: "Petticoat",
   price: "19.99",
   currency_code: "$",
@@ -16,8 +16,7 @@ product = Product.new(
   on_sale: false,
   discount: nil,
 )
-product.save
-product = Product.new(
+product = Product.create(
   name: "Blouse",
   price: "24.99",
   currency_code: "$",
@@ -27,8 +26,7 @@ product = Product.new(
   on_sale: false,
   discount: nil,
 )
-product.save
-product = Product.new(
+product = Product.create(
   name: "Circle Skirt",
   price: "29.99",
   currency_code: "$",
@@ -38,5 +36,4 @@ product = Product.new(
   on_sale: true,
   discount: 10,
 )
-product.save
 p "Success!"
