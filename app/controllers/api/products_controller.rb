@@ -21,10 +21,14 @@ class Api::ProductsController < ApplicationController
   def show
     products = Product.all
     id = params["id"].to_i
-    @product = all_products.select do |product|
+    @product = products.select do |product|
       product[:id] == id
     end
-    @product = @product_by_id[0]
+    render "show.json.jb"
+  end
+
+  def show
+    @product = Product.find_by(id: params[:id])
     render "show.json.jb"
   end
 

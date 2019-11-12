@@ -26,7 +26,11 @@ class Product < ApplicationRecord
   end
 
   def formatted_discount
-    "#{discount}%"
+    if on_sale == true
+      "#{discount}%"
+    elsif on_sale == false
+      "Not on sale"
+    end
   end
 
   def calcuated_discount
