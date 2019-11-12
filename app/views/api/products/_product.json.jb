@@ -1,0 +1,13 @@
+{
+  name: @product.name,
+  price: @product.price,
+  currency_code: @product.currency_code,
+  stock: @product.stock,
+  image_url: @product.image_url,
+  description: @product.description,
+  on_sale: @product.on_sale,
+  formatted: {
+    formatted_discount: @product.formatted_discount,
+    formatted_price: @product.formatted_price,
+  },
+}
