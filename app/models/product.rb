@@ -1,22 +1,4 @@
 class Product < ApplicationRecord
-  def parse_all_products
-    db_extract = Product.all
-    @products = db_extract.map do |product|
-      {
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        stock: product.stock,
-        image_url: product.image_url,
-        description: product.description,
-        sale: product.on_sale,
-        formatted: {
-          formatted_price: product.formatted_price,
-        },
-      }
-    end
-  end
-
   def on_sale?
     @products = []
     db_extract = Product.all

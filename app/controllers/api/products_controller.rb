@@ -19,15 +19,6 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-    products = Product.all
-    id = params["id"].to_i
-    @product = products.select do |product|
-      product[:id] == id
-    end
-    render "show.json.jb"
-  end
-
-  def show
     @product = Product.find_by(id: params[:id])
     render "show.json.jb"
   end

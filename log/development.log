@@ -2484,3 +2484,48 @@ Processing by Api::ProductsController#index as */*
 Completed 200 OK in 16ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 1685)
 
 
+Started GET "/api/products/3" for ::1 at 2019-11-12 10:17:33 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:31:in `show'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 1.7ms | Allocations: 108)
+  Rendered api/products/show.json.jb (Duration: 5.5ms | Allocations: 537)
+Completed 200 OK in 54ms (Views: 27.3ms | ActiveRecord: 6.3ms | Allocations: 11988)
+
+
+Started GET "/api/products/3" for ::1 at 2019-11-12 10:18:07 -0600
+Processing by Api::ProductsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:22:in `show'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 34)
+  Rendered api/products/show.json.jb (Duration: 0.6ms | Allocations: 110)
+Completed 200 OK in 35ms (Views: 2.6ms | ActiveRecord: 6.3ms | Allocations: 8531)
+
+
+Started GET "/api/products/2" for ::1 at 2019-11-12 10:18:11 -0600
+Processing by Api::ProductsController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:22:in `show'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 0.1ms | Allocations: 24)
+  Rendered api/products/show.json.jb (Duration: 0.5ms | Allocations: 100)
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.5ms | Allocations: 1137)
+
+
+Started GET "/api/products/1" for ::1 at 2019-11-12 10:18:19 -0600
+Processing by Api::ProductsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:22:in `show'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 0.1ms | Allocations: 24)
+  Rendered api/products/show.json.jb (Duration: 0.3ms | Allocations: 100)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 1137)
+
+
