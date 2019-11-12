@@ -1,24 +1,4 @@
 class Api::ProductsController < ApplicationController
-  def get_db_extract
-    db_extract = Product.all
-  end
-
-  def parse_all_products
-    db_extract = get_db_extract()
-    @all_products = db_extract.map do |product|
-      {
-        id: product.id,
-        name: product.name,
-        # formatted_price: "#{product.currency_code}#{product.price}",
-        price: product.price,
-        stock: product.stock,
-        image_url: product.image_url,
-        description: product.description,
-        sale: product.on_sale,
-      }
-    end
-  end
-
   def index
     parse_all_products()
     render "index.json.jb"
