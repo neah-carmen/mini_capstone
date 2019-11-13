@@ -15,6 +15,11 @@ class Product < ApplicationRecord
     end
   end
 
+  def tax
+    tax_rate = (10.25 / 100.0)
+    price * tax_rate
+  end
+
   def calcuated_discount
     price - (price * (discount / 100.00))
   end
@@ -24,6 +29,22 @@ class Product < ApplicationRecord
       "#{currency_code}#{price}"
     elsif on_sale == true
       "#{currency_code}#{calcuated_discount}"
+    end
+  end
+
+  def total
+    if on_sale == false
+      price + tax
+    elsif on_sale == true
+      calcuated_discount + tax
+    end
+  end
+
+  def formatted_total
+    if on_sale == false
+      "#{currency_code}#{total}"
+    elsif on_sale == true
+      "#{currency_code}#{total}"
     end
   end
 end

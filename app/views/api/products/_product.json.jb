@@ -1,4 +1,5 @@
 {
+  id: product.id,
   name: product.name,
   price: product.price,
   currency_code: product.currency_code,
@@ -9,5 +10,7 @@
   formatted: {
     formatted_discount: product.formatted_discount,
     formatted_price: product.formatted_price,
+    total: product.total,
+    formatted_total: product.formatted_total,
   },
 }
