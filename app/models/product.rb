@@ -1,7 +1,9 @@
 class Product < ApplicationRecord
   validates :name, presence: true
-  validates :price, numericality: { greater_than_or_equal_to: 1 }
-  validates :description, length: { in: 1..512 }
+  validates :price, presence: true
+  validates :price, numericality: { greater_than: 0 }
+  validates :description, presence: true
+  validates :description, length: { in: 3..500 }
 
   def on_sale?
     @products = []
