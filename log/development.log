@@ -3084,3 +3084,341 @@ Migrating to ChangeProductDescriptionToText (20191113015546)
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "currency_code", "stock", "image_url", "description", "on_sale", "discount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Circle Skirt"], ["price", "29.99"], ["currency_code", "$"], ["stock", 4], ["image_url", "https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415394/actualize/j8soywum2jdee3rv2jbt.jpg"], ["description", "Calf length full circle skirt"], ["on_sale", true], ["discount", 10], ["created_at", "2019-11-13 02:09:36.222062"], ["updated_at", "2019-11-13 02:09:36.222062"]]
   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/products" for ::1 at 2019-11-13 11:10:14 -0600
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.1) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.1) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.2.1) lib/puma/configuration.rb:228:in `call'
+puma (4.2.1) lib/puma/server.rb:667:in `handle_request'
+puma (4.2.1) lib/puma/server.rb:470:in `process_client'
+puma (4.2.1) lib/puma/server.rb:328:in `block in run'
+puma (4.2.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/products" for ::1 at 2019-11-13 11:10:18 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.1) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.1) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.2.1) lib/puma/configuration.rb:228:in `call'
+puma (4.2.1) lib/puma/server.rb:667:in `handle_request'
+puma (4.2.1) lib/puma/server.rb:470:in `process_client'
+puma (4.2.1) lib/puma/server.rb:328:in `block in run'
+puma (4.2.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (197.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "mini_capstone_development"[0m
+  [1m[35m (208.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "mini_capstone_test"[0m
+  [1m[35m (553.6ms)[0m  [1m[35mCREATE DATABASE "mini_capstone_development" ENCODING = 'unicode'[0m
+  [1m[35m (432.9ms)[0m  [1m[35mCREATE DATABASE "mini_capstone_test" ENCODING = 'unicode'[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4423496750447225430)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProducts (20191106020302)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.8ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "price" integer, "currency_code" character varying, "stock" integer, "image_url" character varying, "description" character varying, "on_sale" boolean, "discount" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106020302"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeProductPriceToDecimal (20191113014929)
+  [1m[35m (11.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.9ms)[0m  [1m[35mALTER TABLE "products" ALTER COLUMN "price" TYPE decimal(9,2)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191113014929"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeProductDescriptionToText (20191113015546)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "products" ALTER COLUMN "description" TYPE text[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191113015546"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-13 17:10:52.939809"], ["updated_at", "2019-11-13 17:10:52.939809"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4423496750447225430)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (1.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "currency_code", "stock", "image_url", "description", "on_sale", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Petticoat"], ["price", "19.99"], ["currency_code", "$"], ["stock", 2], ["image_url", "https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415393/actualize/v1gvg9xicsno8hmvkw9o.jpg"], ["description", "Wear underneath skirt to add body."], ["on_sale", false], ["created_at", "2019-11-13 17:10:53.093571"], ["updated_at", "2019-11-13 17:10:53.093571"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "currency_code", "stock", "image_url", "description", "on_sale", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Blouse"], ["price", "24.99"], ["currency_code", "$"], ["stock", 9], ["image_url", "https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415877/actualize/s9ytfrm1hu7a8iyroa28.jpg"], ["description", "Long sleeve blouse with standing collar"], ["on_sale", false], ["created_at", "2019-11-13 17:10:53.104475"], ["updated_at", "2019-11-13 17:10:53.104475"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "currency_code", "stock", "image_url", "description", "on_sale", "discount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Circle Skirt"], ["price", "29.99"], ["currency_code", "$"], ["stock", 4], ["image_url", "https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415394/actualize/j8soywum2jdee3rv2jbt.jpg"], ["description", "Calf length full circle skirt"], ["on_sale", true], ["discount", 10], ["created_at", "2019-11-13 17:10:53.113316"], ["updated_at", "2019-11-13 17:10:53.113316"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/products" for ::1 at 2019-11-13 11:11:02 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 1.7ms | Allocations: 151)
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 59)
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 104)
+  Rendered api/products/index.json.jb (Duration: 25.2ms | Allocations: 8926)
+Completed 200 OK in 47ms (Views: 39.6ms | ActiveRecord: 5.7ms | Allocations: 12653)
+
+
+Started GET "/api/products/1" for ::1 at 2019-11-13 11:11:06 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:25:in `show'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 1.0ms | Allocations: 60)
+  Rendered api/products/show.json.jb (Duration: 3.1ms | Allocations: 195)
+Completed 200 OK in 16ms (Views: 6.3ms | ActiveRecord: 2.5ms | Allocations: 1878)
+
+
+Started GET "/api/products" for ::1 at 2019-11-13 11:11:09 -0600
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 60)
+  Rendered api/products/_product.json.jb (Duration: 1.7ms | Allocations: 59)
+  Rendered api/products/_product.json.jb (Duration: 0.4ms | Allocations: 103)
+  Rendered api/products/index.json.jb (Duration: 9.4ms | Allocations: 1093)
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 1.6ms | Allocations: 2006)
+
+
+Started PATCH "/api/products/1" for ::1 at 2019-11-13 13:54:27 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#update as */*
+  Parameters: {"stock"=>"0", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:30:in `update'
+Completed 422 Unprocessable Entity in 69ms (Views: 1.6ms | ActiveRecord: 26.8ms | Allocations: 12041)
+
+
+Started PATCH "/api/products/1" for ::1 at 2019-11-13 13:54:40 -0600
+Processing by Api::ProductsController#update as */*
+  Parameters: {"stock"=>"1", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:30:in `update'
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/products_controller.rb:38:in `update'
+  [1m[36mProduct Update (0.8ms)[0m  [1m[33mUPDATE "products" SET "stock" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["stock", 1], ["updated_at", "2019-11-13 19:54:40.299104"], ["id", 1]]
+  ↳ app/controllers/api/products_controller.rb:38:in `update'
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/products_controller.rb:38:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 1.5ms | Allocations: 130)
+  Rendered api/products/show.json.jb (Duration: 6.4ms | Allocations: 559)
+Completed 200 OK in 74ms (Views: 41.3ms | ActiveRecord: 15.7ms | Allocations: 8497)
+
+
+Started PATCH "/api/products/1" for ::1 at 2019-11-13 13:55:10 -0600
+Processing by Api::ProductsController#update as */*
+  Parameters: {"stock"=>"0", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:30:in `update'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/products_controller.rb:38:in `update'
+  [1m[36mProduct Update (3.1ms)[0m  [1m[33mUPDATE "products" SET "stock" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["stock", 0], ["updated_at", "2019-11-13 19:55:10.412544"], ["id", 1]]
+  ↳ app/controllers/api/products_controller.rb:38:in `update'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/products_controller.rb:38:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 49)
+  Rendered api/products/show.json.jb (Duration: 0.5ms | Allocations: 125)
+Completed 200 OK in 53ms (Views: 2.8ms | ActiveRecord: 8.7ms | Allocations: 11516)
+
+
+Started PATCH "/api/products/1" for ::1 at 2019-11-13 13:55:56 -0600
+Processing by Api::ProductsController#update as */*
+  Parameters: {"stock"=>"10", "on_sale"=>"true", "discount"=>"5", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:30:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/products_controller.rb:38:in `update'
+  [1m[36mProduct Update (0.5ms)[0m  [1m[33mUPDATE "products" SET "stock" = $1, "on_sale" = $2, "updated_at" = $3 WHERE "products"."id" = $4[0m  [["stock", 10], ["on_sale", true], ["updated_at", "2019-11-13 19:55:56.434475"], ["id", 1]]
+  ↳ app/controllers/api/products_controller.rb:38:in `update'
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/products_controller.rb:38:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 14.4ms | Allocations: 4120)
+  Rendered api/products/show.json.jb (Duration: 14.8ms | Allocations: 4199)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 7.0ms | Allocations: 7290)
+
+
+  
+ActionView::Template::Error (undefined method `/' for nil:NilClass):
+    10:   formatted: {
+    11:     in_stock: product.in_stock?,
+    12:     formatted_discount: product.formatted_discount,
+    13:     formatted_price: product.formatted_price,
+    14:     total: product.total,
+    15:     formatted_total: product.formatted_total,
+    16:   },
+  
+app/models/product.rb:43:in `calcuated_discount'
+app/models/product.rb:50:in `formatted_price'
+app/views/api/products/_product.json.jb:13
+app/views/api/products/show.json.jb:1
+app/controllers/api/products_controller.rb:39:in `update'
+Started PATCH "/api/products/1" for ::1 at 2019-11-13 13:56:44 -0600
+Processing by Api::ProductsController#update as */*
+  Parameters: {"stock"=>"10", "on_sale"=>"true", "discount"=>"5", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:30:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 70)
+  Rendered api/products/show.json.jb (Duration: 1.9ms | Allocations: 145)
+Completed 200 OK in 29ms (Views: 3.5ms | ActiveRecord: 5.1ms | Allocations: 9777)
+
+
+Started GET "/api/products" for ::1 at 2019-11-13 13:57:48 -0600
+Processing by Api::ProductsController#index as */*
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 0.1ms | Allocations: 60)
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 103)
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 79)
+  Rendered api/products/index.json.jb (Duration: 4.3ms | Allocations: 1190)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 2277)
+
+
+Started GET "/api/products" for ::1 at 2019-11-13 13:58:28 -0600
+Processing by Api::ProductsController#index as */*
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 0.5ms | Allocations: 137)
+  Rendered api/products/_product.json.jb (Duration: 0.3ms | Allocations: 103)
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 79)
+  Rendered api/products/index.json.jb (Duration: 4.9ms | Allocations: 1428)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.3ms | Allocations: 3584)
+
+
+Started PATCH "/api/products/1" for ::1 at 2019-11-13 13:59:34 -0600
+Processing by Api::ProductsController#update as */*
+  Parameters: {"stock"=>"10", "on_sale"=>"true", "discount"=>"10", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:30:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 0.3ms | Allocations: 68)
+  Rendered api/products/show.json.jb (Duration: 2.4ms | Allocations: 200)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 1712)
+
+
+Started PATCH "/api/products/1" for ::1 at 2019-11-13 14:01:01 -0600
+Processing by Api::ProductsController#update as */*
+  Parameters: {"stock"=>"10", "on_sale"=>"true", "discount"=>"10", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:31:in `update'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/products_controller.rb:40:in `update'
+  [1m[36mProduct Update (0.6ms)[0m  [1m[33mUPDATE "products" SET "discount" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["discount", 10], ["updated_at", "2019-11-13 20:01:01.440675"], ["id", 1]]
+  ↳ app/controllers/api/products_controller.rb:40:in `update'
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/products_controller.rb:40:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 0.3ms | Allocations: 94)
+  Rendered api/products/show.json.jb (Duration: 0.7ms | Allocations: 169)
+Completed 200 OK in 35ms (Views: 2.4ms | ActiveRecord: 10.6ms | Allocations: 11601)
+
+
+Started PATCH "/api/products/2" for ::1 at 2019-11-13 14:01:28 -0600
+Processing by Api::ProductsController#update as */*
+  Parameters: {"on_sale"=>"true", "discount"=>"25", "id"=>"2"}
+Can't verify CSRF token authenticity.
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:31:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/products_controller.rb:40:in `update'
+  [1m[36mProduct Update (0.4ms)[0m  [1m[33mUPDATE "products" SET "on_sale" = $1, "discount" = $2, "updated_at" = $3 WHERE "products"."id" = $4[0m  [["on_sale", true], ["discount", 25], ["updated_at", "2019-11-13 20:01:28.478830"], ["id", 2]]
+  ↳ app/controllers/api/products_controller.rb:40:in `update'
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/products_controller.rb:40:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 92)
+  Rendered api/products/show.json.jb (Duration: 0.6ms | Allocations: 167)
+Completed 200 OK in 15ms (Views: 1.8ms | ActiveRecord: 7.3ms | Allocations: 3467)
+
+
