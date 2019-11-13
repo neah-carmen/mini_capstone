@@ -7,6 +7,16 @@ class Product < ApplicationRecord
     end
   end
 
+  def in_stock?
+    if stock == 0
+      "Not in stock."
+    elsif stock >= 1
+      "In stock."
+    else
+      "Error, please contact the webmaster."
+    end
+  end
+
   def formatted_discount
     if on_sale == true
       "#{discount}%"

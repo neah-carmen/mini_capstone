@@ -8,6 +8,7 @@
   description: product.description,
   on_sale: product.on_sale,
   formatted: {
+    in_stock: product.in_stock?,
     formatted_discount: product.formatted_discount,
     formatted_price: product.formatted_price,
     total: product.total,

@@ -2807,3 +2807,235 @@ Migrating to ChangeProductDescriptionToText (20191113015546)
   [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4423496750447225430)[0m
   [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/products" for ::1 at 2019-11-12 19:58:20 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (2.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 2.3ms | Allocations: 147)
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 58)
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 103)
+  Rendered api/products/index.json.jb (Duration: 27.4ms | Allocations: 8920)
+Completed 200 OK in 57ms (Views: 41.8ms | ActiveRecord: 9.4ms | Allocations: 12292)
+
+
+Started GET "/api/products/1" for ::1 at 2019-11-12 19:58:22 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:22:in `show'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 59)
+  Rendered api/products/show.json.jb (Duration: 1.9ms | Allocations: 194)
+Completed 200 OK in 14ms (Views: 4.3ms | ActiveRecord: 1.3ms | Allocations: 1863)
+
+
+Started GET "/api/products" for ::1 at 2019-11-12 19:58:32 -0600
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 0.3ms | Allocations: 59)
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 58)
+  Rendered api/products/_product.json.jb (Duration: 0.6ms | Allocations: 102)
+  Rendered api/products/index.json.jb (Duration: 7.5ms | Allocations: 1090)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 1.1ms | Allocations: 1961)
+
+
+Started GET "/api/products/2" for ::1 at 2019-11-12 20:02:28 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:22:in `show'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 4.2ms | Allocations: 151)
+  Rendered api/products/show.json.jb (Duration: 8.7ms | Allocations: 548)
+Completed 200 OK in 68ms (Views: 33.4ms | ActiveRecord: 8.7ms | Allocations: 12179)
+
+
+Started GET "/api/products/2" for ::1 at 2019-11-12 20:02:32 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:22:in `show'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 60)
+  Rendered api/products/show.json.jb (Duration: 0.7ms | Allocations: 136)
+Completed 200 OK in 8ms (Views: 3.6ms | ActiveRecord: 0.6ms | Allocations: 1229)
+
+
+Started GET "/api/products/2" for ::1 at 2019-11-12 20:02:34 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:22:in `show'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 0.3ms | Allocations: 60)
+  Rendered api/products/show.json.jb (Duration: 0.6ms | Allocations: 136)
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 1228)
+
+
+Started GET "/api/products/2" for ::1 at 2019-11-12 20:02:38 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:22:in `show'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 60)
+  Rendered api/products/show.json.jb (Duration: 1.2ms | Allocations: 136)
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 1228)
+
+
+Started GET "/api/products" for ::1 at 2019-11-12 20:02:39 -0600
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 0.3ms | Allocations: 60)
+  Rendered api/products/_product.json.jb (Duration: 0.3ms | Allocations: 59)
+  Rendered api/products/_product.json.jb (Duration: 0.9ms | Allocations: 104)
+  Rendered api/products/index.json.jb (Duration: 7.5ms | Allocations: 1169)
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 1.6ms | Allocations: 2217)
+
+
+Started GET "/api/products/1" for ::1 at 2019-11-12 20:02:41 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:22:in `show'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 60)
+  Rendered api/products/show.json.jb (Duration: 0.4ms | Allocations: 135)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 1213)
+
+
+Started GET "/api/products" for ::1 at 2019-11-12 20:02:42 -0600
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (3.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 0.1ms | Allocations: 60)
+  Rendered api/products/_product.json.jb (Duration: 0.1ms | Allocations: 59)
+  Rendered api/products/_product.json.jb (Duration: 0.1ms | Allocations: 103)
+  Rendered api/products/index.json.jb (Duration: 9.2ms | Allocations: 1084)
+Completed 200 OK in 13ms (Views: 8.0ms | ActiveRecord: 3.5ms | Allocations: 1989)
+
+
+Started GET "/api/products/3" for ::1 at 2019-11-12 20:02:44 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:22:in `show'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 0.3ms | Allocations: 104)
+  Rendered api/products/show.json.jb (Duration: 0.8ms | Allocations: 179)
+Completed 200 OK in 10ms (Views: 4.8ms | ActiveRecord: 0.5ms | Allocations: 1256)
+
+
+Started GET "/api/products" for ::1 at 2019-11-12 20:02:46 -0600
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 0.1ms | Allocations: 60)
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 59)
+  Rendered api/products/_product.json.jb (Duration: 2.3ms | Allocations: 103)
+  Rendered api/products/index.json.jb (Duration: 6.3ms | Allocations: 1084)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.3ms | Allocations: 1989)
+
+
+Started PATCH "/api/products/1" for ::1 at 2019-11-12 20:03:38 -0600
+Processing by Api::ProductsController#update as */*
+  Parameters: {"stock"=>"0", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:27:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/products_controller.rb:35:in `update'
+  [1m[36mProduct Update (0.5ms)[0m  [1m[33mUPDATE "products" SET "stock" = $1, "updated_at" = $2 WHERE "products"."id" = $3[0m  [["stock", 0], ["updated_at", "2019-11-13 02:03:38.826806"], ["id", 1]]
+  ↳ app/controllers/api/products_controller.rb:35:in `update'
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/products_controller.rb:35:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 7.2ms | Allocations: 1818)
+  Rendered api/products/show.json.jb (Duration: 8.7ms | Allocations: 2046)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 13.4ms | Allocations: 5373)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: {
+    2:   id: product.id,
+    3:   name: product.name,
+    4:   price: product.price,
+    5:   currency_code: product.currency_code,
+  
+app/views/api/products/_product.json.jb:2
+app/views/api/products/show.json.jb:1
+app/controllers/api/products_controller.rb:36:in `update'
+Started PATCH "/api/products/1" for ::1 at 2019-11-12 20:04:45 -0600
+Processing by Api::ProductsController#update as */*
+  Parameters: {"name"=>"", "price"=>"", "currency_code"=>"", "stock"=>"0", "image_url"=>"", "description"=>"", "on_sale"=>"", "discount"=>"", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:27:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/products_controller.rb:35:in `update'
+  [1m[36mProduct Update (0.4ms)[0m  [1m[33mUPDATE "products" SET "name" = $1, "price" = $2, "currency_code" = $3, "image_url" = $4, "description" = $5, "on_sale" = $6, "updated_at" = $7 WHERE "products"."id" = $8[0m  [["name", ""], ["price", nil], ["currency_code", ""], ["image_url", ""], ["description", ""], ["on_sale", nil], ["updated_at", "2019-11-13 02:04:45.500498"], ["id", 1]]
+  ↳ app/controllers/api/products_controller.rb:35:in `update'
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/products_controller.rb:35:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 1.0ms | Allocations: 1556)
+  Rendered api/products/show.json.jb (Duration: 1.3ms | Allocations: 1634)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 6.4ms | Allocations: 4733)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: {
+    2:   id: product.id,
+    3:   name: product.name,
+    4:   price: product.price,
+    5:   currency_code: product.currency_code,
+  
+app/views/api/products/_product.json.jb:2
+app/views/api/products/show.json.jb:1
+app/controllers/api/products_controller.rb:36:in `update'
+Started PATCH "/api/products/1" for ::1 at 2019-11-12 20:06:01 -0600
+Processing by Api::ProductsController#update as */*
+  Parameters: {"name"=>"", "price"=>"", "currency_code"=>"", "stock"=>"0", "image_url"=>"", "description"=>"", "on_sale"=>"", "discount"=>"", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:27:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 3.0ms | Allocations: 1598)
+  Rendered api/products/show.json.jb (Duration: 5.1ms | Allocations: 1910)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.7ms | Allocations: 4168)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: {
+    2:   name: product.name,
+    3:   price: product.price,
+    4:   currency_code: product.currency_code,
+    5:   stock: product.stock,
+  
+app/views/api/products/_product.json.jb:2
+app/views/api/products/show.json.jb:1
+app/controllers/api/products_controller.rb:36:in `update'
+Started PATCH "/api/products/1" for ::1 at 2019-11-12 20:06:58 -0600
+Processing by Api::ProductsController#update as */*
+  Parameters: {"stock"=>"0", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:27:in `update'
+  Rendering api/products/show.json.jb
+  Rendered api/products/_product.json.jb (Duration: 0.4ms | Allocations: 91)
+  Rendered api/products/show.json.jb (Duration: 1.4ms | Allocations: 400)
+Completed 200 OK in 25ms (Views: 4.9ms | ActiveRecord: 3.7ms | Allocations: 10252)
+
+
