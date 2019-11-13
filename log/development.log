@@ -3039,3 +3039,48 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 25ms (Views: 4.9ms | ActiveRecord: 3.7ms | Allocations: 10252)
 
 
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (245.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "mini_capstone_development"[0m
+  [1m[35m (239.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "mini_capstone_test"[0m
+  [1m[35m (518.7ms)[0m  [1m[35mCREATE DATABASE "mini_capstone_development" ENCODING = 'unicode'[0m
+  [1m[35m (435.0ms)[0m  [1m[35mCREATE DATABASE "mini_capstone_test" ENCODING = 'unicode'[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4423496750447225430)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProducts (20191106020302)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (23.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "price" integer, "currency_code" character varying, "stock" integer, "image_url" character varying, "description" character varying, "on_sale" boolean, "discount" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106020302"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeProductPriceToDecimal (20191113014929)
+  [1m[35m (5.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.7ms)[0m  [1m[35mALTER TABLE "products" ALTER COLUMN "price" TYPE decimal(9,2)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191113014929"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeProductDescriptionToText (20191113015546)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "products" ALTER COLUMN "description" TYPE text[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191113015546"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-13 02:09:36.020647"], ["updated_at", "2019-11-13 02:09:36.020647"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4423496750447225430)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (4.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "currency_code", "stock", "image_url", "description", "on_sale", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Petticoat"], ["price", "19.99"], ["currency_code", "$"], ["stock", 2], ["image_url", "https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415393/actualize/v1gvg9xicsno8hmvkw9o.jpg"], ["description", "Wear underneath skirt to add body."], ["on_sale", false], ["created_at", "2019-11-13 02:09:36.170449"], ["updated_at", "2019-11-13 02:09:36.170449"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "currency_code", "stock", "image_url", "description", "on_sale", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Blouse"], ["price", "24.99"], ["currency_code", "$"], ["stock", 9], ["image_url", "https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415877/actualize/s9ytfrm1hu7a8iyroa28.jpg"], ["description", "Long sleeve blouse with standing collar"], ["on_sale", false], ["created_at", "2019-11-13 02:09:36.212963"], ["updated_at", "2019-11-13 02:09:36.212963"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "currency_code", "stock", "image_url", "description", "on_sale", "discount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Circle Skirt"], ["price", "29.99"], ["currency_code", "$"], ["stock", 4], ["image_url", "https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415394/actualize/j8soywum2jdee3rv2jbt.jpg"], ["description", "Calf length full circle skirt"], ["on_sale", true], ["discount", 10], ["created_at", "2019-11-13 02:09:36.222062"], ["updated_at", "2019-11-13 02:09:36.222062"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
