@@ -16,7 +16,8 @@ class Product < ApplicationRecord
   end
 
   def tax
-    tax_rate = (10.25 / 100.0)
+    chicago_tax = 10.25
+    tax_rate = (chicago_tax / 100.0)
     price * tax_rate
   end
 
