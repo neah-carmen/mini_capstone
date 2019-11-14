@@ -5,7 +5,7 @@ class Api::ProductsController < ApplicationController
     if params[:search]
       @products = @products.where("name ILIKE ?", "%#{params[:search]}%")
     elsif params[:sale_search]
-      @products = @products.where("on_sale = ?", "#{params[:sale_search]}")
+      @products = @products.where("on_sale = true", "%#{params[:sale_search]}%")
     end
 
     render "index.json.jb"
