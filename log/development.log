@@ -3541,3 +3541,15 @@ Processing by Api::ProductsController#index as */*
 Completed 200 OK in 32ms (Views: 20.5ms | ActiveRecord: 7.2ms | Allocations: 10388)
 
 
+Started GET "/api/products?search=blouse" for ::1 at 2019-11-13 21:08:17 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#index as */*
+  Parameters: {"search"=>"blouse"}
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name ILIKE '%blouse%')[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 0.6ms | Allocations: 197)
+  Rendered api/products/index.json.jb (Duration: 35.5ms | Allocations: 8702)
+Completed 200 OK in 54ms (Views: 35.0ms | ActiveRecord: 17.0ms | Allocations: 12259)
+
+
