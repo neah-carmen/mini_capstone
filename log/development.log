@@ -3553,3 +3553,29 @@ Processing by Api::ProductsController#index as */*
 Completed 200 OK in 54ms (Views: 35.0ms | ActiveRecord: 17.0ms | Allocations: 12259)
 
 
+Started GET "/api/products" for ::1 at 2019-11-13 21:09:53 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#index as */*
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 0.6ms | Allocations: 197)
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 103)
+  Rendered api/products/_product.json.jb (Duration: 0.1ms | Allocations: 103)
+  Rendered api/products/index.json.jb (Duration: 20.6ms | Allocations: 9045)
+Completed 200 OK in 29ms (Views: 20.5ms | ActiveRecord: 6.5ms | Allocations: 12966)
+
+
+Started GET "/api/products?search=coat" for ::1 at 2019-11-13 21:10:13 -0600
+Processing by Api::ProductsController#index as */*
+  Parameters: {"search"=>"coat"}
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 0.9ms | Allocations: 104)
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 103)
+  Rendered api/products/_product.json.jb (Duration: 1.3ms | Allocations: 103)
+  Rendered api/products/index.json.jb (Duration: 5.5ms | Allocations: 1181)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 2182)
+
+
