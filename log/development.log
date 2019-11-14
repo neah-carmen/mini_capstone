@@ -3934,3 +3934,27 @@ Processing by Api::ProductsController#index as */*
 Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 1755)
 
 
+Started GET "/api/products?q=skirt" for ::1 at 2019-11-14 08:55:15 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#index as */*
+  Parameters: {"q"=>"skirt"}
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name ILIKE '%skirt%')[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 2.3ms | Allocations: 197)
+  Rendered api/products/index.json.jb (Duration: 29.4ms | Allocations: 8702)
+Completed 200 OK in 52ms (Views: 37.4ms | ActiveRecord: 9.4ms | Allocations: 12258)
+
+
+Started GET "/api/products?sale=true" for ::1 at 2019-11-14 08:55:23 -0600
+Processing by Api::ProductsController#index as */*
+  Parameters: {"sale"=>"true"}
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (on_sale = true)[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 104)
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 103)
+  Rendered api/products/index.json.jb (Duration: 3.9ms | Allocations: 1007)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 1.1ms | Allocations: 1784)
+
+
