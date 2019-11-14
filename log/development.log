@@ -3603,3 +3603,73 @@ Processing by Api::ProductsController#index as */*
 Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 1.0ms | Allocations: 1430)
 
 
+Started GET "/api/products?search=20" for ::1 at 2019-11-13 21:16:06 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#index as */*
+  Parameters: {"search"=>"20"}
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (2.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name ILIKE '%20%')[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/index.json.jb (Duration: 12.5ms | Allocations: 1711)
+Completed 200 OK in 35ms (Views: 23.3ms | ActiveRecord: 5.3ms | Allocations: 5063)
+
+
+Started GET "/api/products?price_search=20" for ::1 at 2019-11-13 21:16:45 -0600
+Processing by Api::ProductsController#index as */*
+  Parameters: {"price_search"=>"20"}
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (20.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (price < '%20%')[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/index.json.jb (Duration: 30.3ms | Allocations: 2270)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 20.0ms | Allocations: 3594)
+
+
+  
+ActionView::Template::Error (PG::InvalidTextRepresentation: ERROR:  invalid input syntax for type numeric: "%20%"
+LINE 1: SELECT "products".* FROM "products" WHERE (price < '%20%')
+                                                           ^
+):
+    1: @products.map do |product|
+    2:   render partial: "product.json.jb", locals: { product: product }
+    3: end
+  
+app/views/api/products/index.json.jb:1:in `map'
+app/views/api/products/index.json.jb:1
+app/controllers/api/products_controller.rb:11:in `index'
+Started GET "/api/products?price_search=20" for ::1 at 2019-11-13 21:17:07 -0600
+Processing by Api::ProductsController#index as */*
+  Parameters: {"price_search"=>"20"}
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (14.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (price < '20')[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 1.2ms | Allocations: 197)
+  Rendered api/products/index.json.jb (Duration: 44.0ms | Allocations: 8297)
+Completed 200 OK in 49ms (Views: 22.5ms | ActiveRecord: 23.2ms | Allocations: 9939)
+
+
+Started GET "/api/products?price_search=99" for ::1 at 2019-11-13 21:17:13 -0600
+Processing by Api::ProductsController#index as */*
+  Parameters: {"price_search"=>"99"}
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (price < '99')[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 104)
+  Rendered api/products/_product.json.jb (Duration: 0.1ms | Allocations: 103)
+  Rendered api/products/_product.json.jb (Duration: 0.1ms | Allocations: 103)
+  Rendered api/products/index.json.jb (Duration: 2.5ms | Allocations: 1191)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 2176)
+
+
+Started GET "/api/products?sale_search=true" for ::1 at 2019-11-13 21:18:43 -0600
+Processing by Api::ProductsController#index as */*
+  Parameters: {"sale_search"=>"true"}
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (on_sale = 'true')[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 112)
+  Rendered api/products/_product.json.jb (Duration: 0.2ms | Allocations: 103)
+  Rendered api/products/_product.json.jb (Duration: 0.1ms | Allocations: 103)
+  Rendered api/products/index.json.jb (Duration: 16.6ms | Allocations: 7971)
+Completed 200 OK in 20ms (Views: 14.2ms | ActiveRecord: 3.7ms | Allocations: 9931)
+
+
