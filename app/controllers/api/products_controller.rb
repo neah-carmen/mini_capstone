@@ -8,10 +8,12 @@ class Api::ProductsController < ApplicationController
       # if params[:q]
       #   @products = @products.where("name ILIKE ?", "%#{params[:q]}%")
     elsif params[:discount]
-      @products = @products.where("on_discount = true", "%#{params[:sale]}%")
+      @products = @products.where("on_sale = ?", "#{params[:discount]}")
       # commented out for compatibility with front end
       # elsif params[:sale]
-      # @products = @products.where("on_sale = true", "%#{params[:sale]}%")
+      # @products = @products.where("on_sale = ?", "#{params[:sale]}")
+    elsif params[:sort] && params[:sort_order]
+      @products = @products.order(price: params[:sort_order])
     end
 
     @products = @products.order(:id => :asc)
