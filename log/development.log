@@ -3463,3 +3463,81 @@ Processing by Api::ProductsController#index as */*
 Completed 200 OK in 54ms (Views: 17.5ms | ActiveRecord: 34.1ms | Allocations: 9908)
 
 
+Started GET "/api/products?search=skirt" for ::1 at 2019-11-13 21:03:23 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#index as */*
+  Parameters: {"search"=>"skirt"}
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (6.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name ILIKE params[:search])[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/index.json.jb (Duration: 13.9ms | Allocations: 2477)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 6.8ms | Allocations: 5415)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column "params" does not exist
+LINE 1: ...CT "products".* FROM "products" WHERE (name ILIKE params[:se...
+                                                             ^
+):
+    1: @products.map do |product|
+    2:   render partial: "product.json.jb", locals: { product: product }
+    3: end
+  
+app/views/api/products/index.json.jb:1:in `map'
+app/views/api/products/index.json.jb:1
+app/controllers/api/products_controller.rb:5:in `index'
+Started GET "/api/products?search=skirt" for ::1 at 2019-11-13 21:04:11 -0600
+Processing by Api::ProductsController#index as */*
+  Parameters: {"search"=>"skirt"}
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (6.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name ILIKE %skirt%)[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/index.json.jb (Duration: 8.0ms | Allocations: 1951)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 6.5ms | Allocations: 3335)
+
+
+  
+ActionView::Template::Error (PG::SyntaxError: ERROR:  syntax error at or near "%"
+LINE 1: ...LECT "products".* FROM "products" WHERE (name ILIKE %skirt%)
+                                                               ^
+):
+    1: @products.map do |product|
+    2:   render partial: "product.json.jb", locals: { product: product }
+    3: end
+  
+app/views/api/products/index.json.jb:1:in `map'
+app/views/api/products/index.json.jb:1
+app/controllers/api/products_controller.rb:5:in `index'
+Started GET "/api/products?search=skirt" for ::1 at 2019-11-13 21:04:37 -0600
+Processing by Api::ProductsController#index as */*
+  Parameters: {"search"=>"skirt"}
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name ILIKE skirt)[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/index.json.jb (Duration: 2.4ms | Allocations: 1947)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms | Allocations: 3251)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column "skirt" does not exist
+LINE 1: SELECT "products".* FROM "products" WHERE (name ILIKE skirt)
+                                                              ^
+):
+    1: @products.map do |product|
+    2:   render partial: "product.json.jb", locals: { product: product }
+    3: end
+  
+app/views/api/products/index.json.jb:1:in `map'
+app/views/api/products/index.json.jb:1
+app/controllers/api/products_controller.rb:5:in `index'
+Started GET "/api/products?search=skirt" for ::1 at 2019-11-13 21:06:57 -0600
+Processing by Api::ProductsController#index as */*
+  Parameters: {"search"=>"skirt"}
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name ILIKE '%skirt%')[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 1.6ms | Allocations: 197)
+  Rendered api/products/index.json.jb (Duration: 20.7ms | Allocations: 8499)
+Completed 200 OK in 32ms (Views: 20.5ms | ActiveRecord: 7.2ms | Allocations: 10388)
+
+
