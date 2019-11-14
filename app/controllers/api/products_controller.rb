@@ -2,11 +2,19 @@ class Api::ProductsController < ApplicationController
   def index
     @products = Product.all
 
-    if params[:q]
-      @products = @products.where("name ILIKE ?", "%#{params[:q]}%")
-    elsif params[:sale]
-      @products = @products.where("on_sale = true", "%#{params[:sale]}%")
+    if params[:search]
+      @products = @products.where("name ILIKE ?", "%#{params[:search]}%")
+      # commented out for compatibility with front end
+      # if params[:q]
+      #   @products = @products.where("name ILIKE ?", "%#{params[:q]}%")
+    elsif params[:discount]
+      @products = @products.where("on_discount = true", "%#{params[:sale]}%")
+      # commented out for compatibility with front end
+      # elsif params[:sale]
+      # @products = @products.where("on_sale = true", "%#{params[:sale]}%")
     end
+
+    @products = @products.order(:id => :asc)
 
     render "index.json.jb"
   end
