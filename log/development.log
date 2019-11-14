@@ -3579,3 +3579,27 @@ Processing by Api::ProductsController#index as */*
 Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 2182)
 
 
+Started GET "/api/products" for ::1 at 2019-11-13 21:12:21 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#index as */*
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 0.8ms | Allocations: 197)
+  Rendered api/products/_product.json.jb (Duration: 0.4ms | Allocations: 103)
+  Rendered api/products/_product.json.jb (Duration: 0.5ms | Allocations: 103)
+  Rendered api/products/index.json.jb (Duration: 22.7ms | Allocations: 9045)
+Completed 200 OK in 33ms (Views: 25.2ms | ActiveRecord: 5.6ms | Allocations: 12966)
+
+
+Started GET "/api/products?search=coat" for ::1 at 2019-11-13 21:12:33 -0600
+Processing by Api::ProductsController#index as */*
+  Parameters: {"search"=>"coat"}
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name ILIKE '%coat%')[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 0.7ms | Allocations: 104)
+  Rendered api/products/index.json.jb (Duration: 4.2ms | Allocations: 841)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 1.0ms | Allocations: 1430)
+
+

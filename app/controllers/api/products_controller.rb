@@ -3,7 +3,7 @@ class Api::ProductsController < ApplicationController
     @products = Product.all
 
     if params[:search]
-      Product.where("name ILIKE ?", "%#{params[:search]}%")
+      @products = @products.where("name ILIKE ?", "%#{params[:search]}%")
     end
 
     render "index.json.jb"
