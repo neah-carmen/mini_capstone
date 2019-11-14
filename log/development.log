@@ -3422,3 +3422,44 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 15ms (Views: 1.8ms | ActiveRecord: 7.3ms | Allocations: 3467)
 
 
+Started GET "/api/products" for ::1 at 2019-11-13 20:59:34 -0600
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#index as */*
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (29.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name ILIKE 'skirt')[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/index.json.jb (Duration: 39.8ms | Allocations: 1711)
+Completed 200 OK in 65ms (Views: 27.4ms | ActiveRecord: 32.3ms | Allocations: 5033)
+
+
+Started GET "/api/products" for ::1 at 2019-11-13 21:00:10 -0600
+Processing by Api::ProductsController#index as */*
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (8.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (:name ILIKE 'skirt')[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/index.json.jb (Duration: 14.4ms | Allocations: 2270)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 8.9ms | Allocations: 3566)
+
+
+  
+ActionView::Template::Error (PG::SyntaxError: ERROR:  syntax error at or near ":"
+LINE 1: SELECT "products".* FROM "products" WHERE (:name ILIKE 'skir...
+                                                   ^
+):
+    1: @products.map do |product|
+    2:   render partial: "product.json.jb", locals: { product: product }
+    3: end
+  
+app/views/api/products/index.json.jb:1:in `map'
+app/views/api/products/index.json.jb:1
+app/controllers/api/products_controller.rb:5:in `index'
+Started GET "/api/products" for ::1 at 2019-11-13 21:00:51 -0600
+Processing by Api::ProductsController#index as */*
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name ILIKE '%skirt%')[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/_product.json.jb (Duration: 2.3ms | Allocations: 197)
+  Rendered api/products/index.json.jb (Duration: 50.3ms | Allocations: 8297)
+Completed 200 OK in 54ms (Views: 17.5ms | ActiveRecord: 34.1ms | Allocations: 9908)
+
+
