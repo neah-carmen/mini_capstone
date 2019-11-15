@@ -1,24 +1,21 @@
 class Api::SuppliersController < ApplicationController
   def index
-    render json: { message: "index" }
+    render "index.json.jb"
   end
 
   def create
-    render json: { message: "create" }
+    render "show.json.jb"
   end
 
   def show
-    render json: { message: "show" }
+    render "show.json.jb"
   end
 
   def update
-    render json: { message: "update" }
+    render "show.json.jb"
   end
 
   def destroy
     render json: { message: "destroy" }
-  end
-
-  def method_name
   end
 end
