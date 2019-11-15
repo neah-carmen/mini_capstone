@@ -23,6 +23,8 @@ class Api::SuppliersController < ApplicationController
   end
 
   def destroy
-    render json: { message: "destroy" }
+    @supplier = Supplier.find_by(id: params[:id])
+    @supplier.destroy
+    render json: { message: "Supplier successfully deleted." }
   end
 end

@@ -5679,3 +5679,28 @@ Processing by Api::SuppliersController#index as */*
 Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.6ms | Allocations: 3360)
 
 
+Started DELETE "/api/suppliers/3" for ::1 at 2019-11-15 10:37:40 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SuppliersController#destroy as */*
+  Parameters: {"id"=>"3"}
+Can't verify CSRF token authenticity.
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/suppliers_controller.rb:26:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/suppliers_controller.rb:27:in `destroy'
+  [1m[36mSupplier Destroy (0.5ms)[0m  [1m[31mDELETE FROM "suppliers" WHERE "suppliers"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/api/suppliers_controller.rb:27:in `destroy'
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/suppliers_controller.rb:27:in `destroy'
+Completed 200 OK in 35ms (Views: 0.5ms | ActiveRecord: 15.6ms | Allocations: 7450)
+
+
+Started GET "/api/suppliers" for ::1 at 2019-11-15 10:37:46 -0600
+Processing by Api::SuppliersController#index as */*
+  Rendering api/suppliers/index.json.jb
+  Rendered api/suppliers/index.json.jb (Duration: 3.9ms | Allocations: 173)
+  [1m[36mSupplier Load (0.7ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers"[0m
+  ↳ app/controllers/api/suppliers_controller.rb:4:in `index'
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.7ms | Allocations: 4064)
+
+
