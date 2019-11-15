@@ -5704,3 +5704,30 @@ Processing by Api::SuppliersController#index as */*
 Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.7ms | Allocations: 4064)
 
 
+Started PATCH "/api/suppliers/1" for ::1 at 2019-11-15 10:45:34 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SuppliersController#update as */*
+  Parameters: {"name"=>"Express", "email"=>"cs@express.com", "phone_number"=>"101-101-1001", "id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/suppliers_controller.rb:22:in `update'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/suppliers_controller.rb:26:in `update'
+  [1m[36mSupplier Update (0.7ms)[0m  [1m[33mUPDATE "suppliers" SET "email" = $1, "phone_number" = $2, "updated_at" = $3 WHERE "suppliers"."id" = $4[0m  [["email", "cs@express.com"], ["phone_number", "101-101-1001"], ["updated_at", "2019-11-15 16:45:34.689811"], ["id", 1]]
+  ↳ app/controllers/api/suppliers_controller.rb:26:in `update'
+  [1m[35m (15.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/suppliers_controller.rb:26:in `update'
+  Rendering api/suppliers/show.json.jb
+  Rendered api/suppliers/show.json.jb (Duration: 4.0ms | Allocations: 173)
+Completed 200 OK in 77ms (Views: 33.5ms | ActiveRecord: 22.6ms | Allocations: 10425)
+
+
+Started GET "/api/suppliers" for ::1 at 2019-11-15 10:45:39 -0600
+Processing by Api::SuppliersController#index as */*
+  Rendering api/suppliers/index.json.jb
+  Rendered api/suppliers/index.json.jb (Duration: 5.9ms | Allocations: 542)
+  [1m[36mSupplier Load (0.6ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers"[0m
+  ↳ app/controllers/api/suppliers_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.6ms | Allocations: 3287)
+
+
