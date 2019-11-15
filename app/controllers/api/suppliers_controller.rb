@@ -5,6 +5,11 @@ class Api::SuppliersController < ApplicationController
   end
 
   def create
+    @supplier = Supplier.create(
+      name: params[:name],
+      email: params[:email],
+      phone_number: params[:phone_number],
+    )
     render "show.json.jb"
   end
 
