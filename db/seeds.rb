@@ -8,7 +8,7 @@
 
 product = Product.create(
   name: "Petticoat",
-  price: "19.99",
+  price: "49.99",
   currency_code: "$",
   stock: "2",
   image_url: "https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415393/actualize/v1gvg9xicsno8hmvkw9o.jpg",
@@ -18,7 +18,7 @@ product = Product.create(
 )
 product = Product.create(
   name: "Blouse",
-  price: "24.99",
+  price: "249.99",
   currency_code: "$",
   stock: "9",
   image_url: "https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415877/actualize/s9ytfrm1hu7a8iyroa28.jpg",
@@ -28,7 +28,7 @@ product = Product.create(
 )
 product = Product.create(
   name: "Circle Skirt",
-  price: "29.99",
+  price: "19.99",
   currency_code: "$",
   stock: "4",
   image_url: "https://res.cloudinary.com/puereveryday/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1573415394/actualize/j8soywum2jdee3rv2jbt.jpg",
@@ -36,4 +36,15 @@ product = Product.create(
   on_sale: true,
   discount: 10,
 )
+Supplier.create(
+  name: "Moi Meme Moitie",
+  email: "info@moi-meme-moitie.com",
+  phone_number: "+81.927137999",
+)
+Supplier.create(
+  name: "Baby, The Stars Shine Bright",
+  email: "info@baby-aatp.com",
+  phone_number: "+1.7147064182",
+)
+
 p "Success!"
