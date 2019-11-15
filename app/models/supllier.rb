@@ -1,2 +1,0 @@
-class Supllier < ApplicationRecord
-end
