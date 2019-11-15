@@ -5528,3 +5528,129 @@ Migrating to AddSupplierIdToProductModel (20191115031735)
   [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4423496750447225430)[0m
   [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mSupplier Load (2.6ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/api/suppliers" for ::1 at 2019-11-15 10:15:41 -0600
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SuppliersController#index as */*
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 231)
+
+
+Started GET "/api/suppliers/1" for ::1 at 2019-11-15 10:15:45 -0600
+Processing by Api::SuppliersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 137)
+
+
+Started POST "/api/suppliers" for ::1 at 2019-11-15 10:16:22 -0600
+Processing by Api::SuppliersController#create as */*
+Can't verify CSRF token authenticity.
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 175)
+
+
+Started PATCH "/api/suppliers/1" for ::1 at 2019-11-15 10:16:38 -0600
+Processing by Api::SuppliersController#update as */*
+  Parameters: {"id"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 168)
+
+
+Started DELETE "/api/suppliers/1" for ::1 at 2019-11-15 10:16:52 -0600
+Processing by Api::SuppliersController#destroy as */*
+  Parameters: {"id"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 168)
+
+
+Started GET "/api/suppliers" for ::1 at 2019-11-15 10:22:16 -0600
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SuppliersController#index as */*
+  Rendering api/suppliers/index.json.jb
+  Rendered api/suppliers/index.json.jb (Duration: 3.7ms | Allocations: 177)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 2652)
+
+
+Started GET "/api/suppliers/1" for ::1 at 2019-11-15 10:22:19 -0600
+Processing by Api::SuppliersController#show as */*
+  Parameters: {"id"=>"1"}
+  Rendering api/suppliers/show.json.jb
+  Rendered api/suppliers/show.json.jb (Duration: 1.5ms | Allocations: 66)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 578)
+
+
+Started POST "/api/suppliers" for ::1 at 2019-11-15 10:22:22 -0600
+Processing by Api::SuppliersController#create as */*
+Can't verify CSRF token authenticity.
+  Rendering api/suppliers/show.json.jb
+  Rendered api/suppliers/show.json.jb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started PATCH "/api/suppliers/1" for ::1 at 2019-11-15 10:22:24 -0600
+Processing by Api::SuppliersController#update as */*
+  Parameters: {"id"=>"1"}
+Can't verify CSRF token authenticity.
+  Rendering api/suppliers/show.json.jb
+  Rendered api/suppliers/show.json.jb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 381)
+
+
+Started DELETE "/api/suppliers/1" for ::1 at 2019-11-15 10:22:30 -0600
+Processing by Api::SuppliersController#destroy as */*
+  Parameters: {"id"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 169)
+
+
+Started GET "/api/suppliers" for ::1 at 2019-11-15 10:26:15 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SuppliersController#index as */*
+  Rendering api/suppliers/index.json.jb
+  Rendered api/suppliers/index.json.jb (Duration: 3.8ms | Allocations: 173)
+  [1m[36mSupplier Load (0.6ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers"[0m
+  ↳ app/controllers/api/suppliers_controller.rb:4:in `index'
+Completed 200 OK in 44ms (Views: 33.5ms | ActiveRecord: 7.0ms | Allocations: 8138)
+
+
+Started GET "/api/suppliers/1" for ::1 at 2019-11-15 10:29:54 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SuppliersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 4255)
+
+
+  
+NoMethodError (undefined method `findy_by' for #<Class:0x00007f9c9d321900>
+Did you mean?  find_by
+               find_by!):
+  
+app/controllers/api/suppliers_controller.rb:12:in `show'
+Started GET "/api/suppliers/1" for ::1 at 2019-11-15 10:30:06 -0600
+Processing by Api::SuppliersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/suppliers_controller.rb:12:in `show'
+  Rendering api/suppliers/show.json.jb
+  Rendered api/suppliers/show.json.jb (Duration: 0.8ms | Allocations: 63)
+Completed 200 OK in 36ms (Views: 12.7ms | ActiveRecord: 7.7ms | Allocations: 7575)
+
+
+Started GET "/api/suppliers/2" for ::1 at 2019-11-15 10:30:09 -0600
+Processing by Api::SuppliersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/suppliers_controller.rb:12:in `show'
+  Rendering api/suppliers/show.json.jb
+  Rendered api/suppliers/show.json.jb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 1014)
+
+
+Started GET "/api/suppliers/1" for ::1 at 2019-11-15 10:30:12 -0600
+Processing by Api::SuppliersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/suppliers_controller.rb:12:in `show'
+  Rendering api/suppliers/show.json.jb
+  Rendered api/suppliers/show.json.jb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 1013)
+
+
