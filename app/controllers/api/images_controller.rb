@@ -1,6 +1,7 @@
 class Api::ImagesController < ApplicationController
   def index
-    render json: { message: "index" }
+    @images = Image.all
+    render "index.json.jb"
   end
 
   def create
