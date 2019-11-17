@@ -9,7 +9,8 @@ class Api::ImagesController < ApplicationController
   end
 
   def show
-    render json: { message: "show" }
+    @image = Image.find_by(id: params[:id])
+    render "show.json.jb"
   end
 
   def update
