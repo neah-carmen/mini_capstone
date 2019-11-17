@@ -5,7 +5,11 @@ class Api::ImagesController < ApplicationController
   end
 
   def create
-    render json: { message: "create" }
+    @image = Image.create(
+      url: params[:url],
+      product_id: params[:product_id],
+    )
+    render "show.json.jb"
   end
 
   def show
