@@ -4,7 +4,6 @@
   price: product.price,
   currency_code: product.currency_code,
   stock: product.stock,
-  image_url: product.image_url,
   description: product.description,
   on_sale: product.on_sale,
   discount: product.discount,
@@ -15,4 +14,10 @@
     total: product.total,
     formatted_total: product.formatted_total,
   },
+  supplier: {
+    name: product.supplier.name,
+    email: product.supplier.email,
+    phone_number: product.supplier.phone_number,
+  },
+  images: product.images,
 }
