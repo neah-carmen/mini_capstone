@@ -11,6 +11,10 @@ class Product < ApplicationRecord
     Supplier.find_by(id: supplier_id)
   end
 
+  def images
+    Image.where(product_id: id)
+  end
+
   def on_sale?
     @products = []
     db_extract = Product.all
