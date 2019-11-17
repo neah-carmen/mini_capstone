@@ -18,7 +18,10 @@ class Api::ImagesController < ApplicationController
   end
 
   def update
-    render json: { message: "update" }
+    @image = Image.find_by(id: params[:id])
+    @image.url = params[:url] || @image.url
+    @image.product_id = params[:product_id] || @image.product_id
+    @image.save
   end
 
   def destroy
