@@ -104,6 +104,68 @@ Image.create(
   url: "https://res.cloudinary.com/puereveryday/image/upload/c_thumb,w_200,g_face/v1574007720/actualize/urewk9lbviwa4vuhhhsj.jpg",
   product_id: 7,
 )
+Image.create(
+  url: "https://res.cloudinary.com/puereveryday/image/upload/c_thumb,w_200,g_face/v1574011247/actualize/h9gk20klfjowtchgfkat.jpg",
+  product_id: 7,
+)
+Product.create(
+  name: "Gardenia dress",
+  price: 324.99,
+  currency_code: "$",
+  stock: 2,
+  description: "A simple and elegant dress with a rose lace and cape collar.",
+  on_sale: false,
+  discount: nil,
+  supplier_id: 1,
+)
+Image.create(
+  url: "https://res.cloudinary.com/puereveryday/image/upload/c_thumb,w_200,g_face/v1574043260/actualize/ckw2xr5t9hfmk54gvhj3.jpg",
+  product_id: 8,
+)
+Image.create(
+  url: "https://res.cloudinary.com/puereveryday/image/upload/v1574043259/actualize/ik7c7fc7pzyjtolceuro.jpg",
+  product_id: 8,
+)
+Image.create(
+  url: "https://res.cloudinary.com/puereveryday/image/upload/c_thumb,w_200,g_face/v1574043261/actualize/jqmwg737gg92h2dzkrrl.jpg",
+  product_id: 8,
+)
+Product.create(
+  name: "Petticoat",
+  price: 149.99,
+  currency_code: "$",
+  stock: 4,
+  description: "A petticoat with a volume of 2 steps chiffon frills.",
+  on_sale: true,
+  discount: 10,
+  supplier_id: 1,
+)
+Image.create(
+  url: "https://res.cloudinary.com/puereveryday/image/upload/c_thumb,w_200,g_face/v1574043507/actualize/wkytljqa2dhkfphyoxvi.jpg",
+  product_id: 9,
+)
+Product.create(
+  name: "Summer leopard dress",
+  price: 189.99,
+  currency_code: "$",
+  stock: 5,
+  description: "Cotton dress with puffed sleeve cap and comfortable but stretchy cotton for the summer time.",
+  on_sale: false,
+  discount: nil,
+  supplier_id: 1,
+)
+Image.create(
+  url: "https://res.cloudinary.com/puereveryday/image/upload/c_thumb,w_200,g_face/v1574043604/actualize/ahr9uxxcvocplvtb3aj9.jpg",
+  product_id: 10,
+)
+Image.create(
+  url: "https://res.cloudinary.com/puereveryday/image/upload/c_thumb,w_200,g_face/v1574043604/actualize/obca4mdd5oiet9laqiog.jpg",
+  product_id: 10,
+)
+Image.create(
+  url: "https://res.cloudinary.com/puereveryday/image/upload/v1574043604/actualize/yezxxstlb1ixoxdovybt.jpg",
+  product_id: 10,
+)
 Supplier.create(
   name: "Moi Meme Moitie",
   email: "info@moi-meme-moitie.com",
