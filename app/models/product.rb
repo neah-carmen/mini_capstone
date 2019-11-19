@@ -7,6 +7,10 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :description, length: { in: 3..500 }
 
+  belongs_to :supplier
+
+  has_many :images
+
   def on_sale?
     @products = []
     db_extract = Product.all
