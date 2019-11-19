@@ -4,7 +4,5 @@ class Supplier < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :phone_number, presence: true
 
-  def products
-    Product.where(supplier_id: id)
-  end
+  has_many :products
 end
