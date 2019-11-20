@@ -1,4 +1,8 @@
 class Api::OrdersController < ApplicationController
+  def index
+    render json: { message: "index" }
+  end
+
   def create
     if current_user
       @order = Order.new(

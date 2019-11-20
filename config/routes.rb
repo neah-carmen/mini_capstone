@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     patch "/images/:id" => "images#update"
     delete "/images/:id" => "images#destroy"
 
+    get "/orders" => "orders#index"
     post "/orders" => "orders#create"
 
     post "/users" => "users#create"
