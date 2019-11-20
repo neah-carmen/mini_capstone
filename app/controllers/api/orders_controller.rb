@@ -6,8 +6,12 @@ class Api::OrdersController < ApplicationController
         product_id: params[:product_id],
         quantity: params[:quantity],
       )
-      @order.save
-      render "show.json.jb"
+      if @order.save
+        @product = Product.find_by(id: params[:product_id])
+        @order.tax = @product.tax
+        @order.total = @product.total
+        render "show.json.jb"
+      end
     else
       render json: []
     end
