@@ -1,6 +1,10 @@
 class Api::OrdersController < ApplicationController
   def index
-    render json: { message: "index" }
+    if current_user
+      render json: { message: "index" }
+    else
+      render json: []
+    end
   end
 
   def create
