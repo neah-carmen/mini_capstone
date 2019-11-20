@@ -1,7 +1,7 @@
 class Api::OrdersController < ApplicationController
   def index
     if current_user
-      @orders = Order.find_by(user_id: current_user.id)
+      @orders = Order.where(user_id: current_user.id)
       render "index.json.jb"
     else
       render json: []
