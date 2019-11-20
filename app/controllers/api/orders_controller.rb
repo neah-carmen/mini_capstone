@@ -29,6 +29,11 @@ class Api::OrdersController < ApplicationController
   end
 
   def show
-    render json: { message: "show" }
+    if current_user
+      @order = Order.find_by(id: params[:id])
+      render "show.json.jb"
+    else
+      render json: []
+    end
   end
 end
