@@ -1,6 +1,10 @@
 class Api::OrdersController < ApplicationController
   def create
-    render json: { message: "create" }
+    if current_user
+      render json: { message: "create" }
+    else
+      render json: []
+    end
   end
 
   def show
