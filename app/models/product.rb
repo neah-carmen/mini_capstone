@@ -10,7 +10,7 @@ class Product < ApplicationRecord
   belongs_to :supplier
 
   has_many :images
-  has_many :products
+  has_many :orders
 
   def on_sale?
     @products = []
