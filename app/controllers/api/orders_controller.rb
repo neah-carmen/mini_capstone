@@ -1,7 +1,8 @@
 class Api::OrdersController < ApplicationController
   def index
     if current_user
-      render json: { message: "index" }
+      @orders = Order.find_by(user_id: current_user.id)
+      render "index.json.jb"
     else
       render json: []
     end
@@ -19,6 +20,7 @@ class Api::OrdersController < ApplicationController
         @order.subtotal = @order.quantity * @product.price
         @order.tax = @order.quantity * @product.tax
         @order.total = @order.quantity * @product.total
+        @order.save
         render "show.json.jb"
       end
     else
