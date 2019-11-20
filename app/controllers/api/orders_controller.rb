@@ -8,8 +8,9 @@ class Api::OrdersController < ApplicationController
       )
       if @order.save
         @product = Product.find_by(id: params[:product_id])
-        @order.tax = @product.tax
-        @order.total = @product.total
+        @order.subtotal = @order.quantity * @product.price
+        @order.tax = @order.quantity * @product.tax
+        @order.total = @order.quantity * @product.total
         render "show.json.jb"
       end
     else
