@@ -11606,3 +11606,1202 @@ Processing by Api::OrdersController#index as HTML
 Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 1.2ms | Allocations: 4445)
 
 
+Started GET "/api/products" for ::1 at 2019-11-19 21:23:58 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.6ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 48.4ms | Allocations: 9606)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 4.5ms | Allocations: 734)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 5.6ms | Allocations: 734)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.7ms | Allocations: 777)
+  [1m[36mCACHE Supplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 4.6ms | Allocations: 735)
+  [1m[36mSupplier Load (3.7ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 9.3ms | Allocations: 826)
+  [1m[36mCACHE Supplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 4.8ms | Allocations: 776)
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 4.0ms | Allocations: 827)
+  [1m[36mCACHE Supplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 4.8ms | Allocations: 776)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 4.3ms | Allocations: 733)
+  Rendered api/products/index.json.jb (Duration: 117.1ms | Allocations: 24892)
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (1.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (7.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+Completed 200 OK in 265ms (Views: 209.4ms | ActiveRecord: 31.9ms | Allocations: 48409)
+
+
+Started POST "/api/sessions" for ::1 at 2019-11-19 21:24:09 -0600
+Processing by Api::SessionsController#create as HTML
+  Parameters: {"email"=>"user@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"user@email.com", "password"=>"[FILTERED]"}}
+HTTP Origin header (https://mini-capstone.netlify.com) didn't match request.base_url (http://localhost:3000)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3:in `create'
+Completed 201 Created in 310ms (Views: 0.3ms | ActiveRecord: 4.8ms | Allocations: 6110)
+
+
+Started GET "/api/products" for ::1 at 2019-11-19 21:24:10 -0600
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (3.0ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.6ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 4.4ms | Allocations: 829)
+  [1m[36mCACHE Supplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.2ms | Allocations: 733)
+  [1m[36mCACHE Supplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.4ms | Allocations: 734)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 5.2ms | Allocations: 777)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 5.7ms | Allocations: 734)
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 6.7ms | Allocations: 827)
+  [1m[36mCACHE Supplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.5ms | Allocations: 776)
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.8ms | Allocations: 827)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 14.0ms | Allocations: 776)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.4ms | Allocations: 735)
+  Rendered api/products/index.json.jb (Duration: 61.9ms | Allocations: 9172)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.9ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+Completed 200 OK in 93ms (Views: 84.3ms | ActiveRecord: 8.0ms | Allocations: 23325)
+
+
+Started GET "/api/products/2" for ::1 at 2019-11-19 21:24:13 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:51:in `show'
+  Rendering api/products/show.json.jb
+  [1m[36mSupplier Load (1.9ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 4.3ms | Allocations: 825)
+  Rendered api/products/show.json.jb (Duration: 6.2ms | Allocations: 961)
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:52:in `show'
+Completed 200 OK in 16ms (Views: 10.7ms | ActiveRecord: 2.8ms | Allocations: 3400)
+
+
+Started POST "/api/orders" for ::1 at 2019-11-19 21:24:16 -0600
+Processing by Api::OrdersController#create as HTML
+  Parameters: {"product_id"=>2, "quantity"=>"2", "order"=>{"product_id"=>2, "quantity"=>"2"}}
+HTTP Origin header (https://mini-capstone.netlify.com) didn't match request.base_url (http://localhost:3000)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/orders_controller.rb:18:in `create'
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/orders_controller.rb:18:in `create'
+  [1m[36mProduct Load (1.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/orders_controller.rb:18:in `create'
+  [1m[36mOrder Create (1.3ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "product_id", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["product_id", 2], ["quantity", 2], ["created_at", "2019-11-20 03:24:16.456585"], ["updated_at", "2019-11-20 03:24:16.456585"]]
+  ↳ app/controllers/api/orders_controller.rb:18:in `create'
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/orders_controller.rb:18:in `create'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/orders_controller.rb:19:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/orders_controller.rb:23:in `create'
+  [1m[36mOrder Update (2.2ms)[0m  [1m[33mUPDATE "orders" SET "subtotal" = $1, "tax" = $2, "total" = $3, "updated_at" = $4 WHERE "orders"."id" = $5[0m  [["subtotal", "299.98"], ["tax", "30.75"], ["total", "330.73"], ["updated_at", "2019-11-20 03:24:16.473107"], ["id", 11]]
+  ↳ app/controllers/api/orders_controller.rb:23:in `create'
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/orders_controller.rb:23:in `create'
+  Rendering api/orders/show.json.jb
+  Rendered api/orders/_order.json.jb (Duration: 1.6ms | Allocations: 90)
+  Rendered api/orders/show.json.jb (Duration: 3.9ms | Allocations: 364)
+Completed 200 OK in 70ms (Views: 7.0ms | ActiveRecord: 27.6ms | Allocations: 16500)
+
+
+Started GET "/api/orders/11" for ::1 at 2019-11-19 21:24:16 -0600
+Processing by Api::OrdersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/orders_controller.rb:33:in `show'
+  Rendering api/orders/show.json.jb
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/orders/_order.json.jb:4
+  Rendered api/orders/_order.json.jb (Duration: 2.8ms | Allocations: 777)
+  Rendered api/orders/show.json.jb (Duration: 3.2ms | Allocations: 852)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 1.2ms | Allocations: 2764)
+
+
+Started GET "/api/products" for ::1 at 2019-11-19 21:24:17 -0600
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.9ms | Allocations: 830)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.5ms | Allocations: 733)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.4ms | Allocations: 734)
+  [1m[36mCACHE Supplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 4.7ms | Allocations: 777)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.9ms | Allocations: 734)
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.0ms | Allocations: 826)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.5ms | Allocations: 776)
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.9ms | Allocations: 827)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.0ms | Allocations: 776)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.8ms | Allocations: 733)
+  Rendered api/products/index.json.jb (Duration: 29.6ms | Allocations: 9179)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (2.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+Completed 200 OK in 60ms (Views: 52.4ms | ActiveRecord: 6.7ms | Allocations: 23339)
+
+
+Started GET "/api/orders" for ::1 at 2019-11-19 21:24:18 -0600
+Processing by Api::OrdersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  Rendering api/orders/index.json.jb
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/orders/index.json.jb:1:in `map'
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/api/orders/_order.json.jb:4
+  Rendered api/orders/_order.json.jb (Duration: 4.6ms | Allocations: 781)
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/orders/_order.json.jb:4
+  Rendered api/orders/_order.json.jb (Duration: 3.8ms | Allocations: 779)
+  Rendered api/orders/index.json.jb (Duration: 12.6ms | Allocations: 2430)
+Completed 200 OK in 21ms (Views: 12.5ms | ActiveRecord: 3.9ms | Allocations: 4646)
+
+
+Started GET "/api/products" for ::1 at 2019-11-19 21:24:21 -0600
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (2.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.4ms | Allocations: 829)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.0ms | Allocations: 733)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.2ms | Allocations: 734)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.0ms | Allocations: 777)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.4ms | Allocations: 734)
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.9ms | Allocations: 826)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.4ms | Allocations: 776)
+  [1m[36mSupplier Load (0.7ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 4.6ms | Allocations: 827)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.0ms | Allocations: 776)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.7ms | Allocations: 733)
+  Rendered api/products/index.json.jb (Duration: 32.8ms | Allocations: 9168)
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (1.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (1.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+Completed 200 OK in 62ms (Views: 52.8ms | ActiveRecord: 8.4ms | Allocations: 23320)
+
+
+Started POST "/api/sessions" for ::1 at 2019-11-20 18:32:17 -0600
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#create as HTML
+  Parameters: {"email"=>"user@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"user@email.com", "password"=>"[FILTERED]"}}
+HTTP Origin header (https://mini-capstone.netlify.com) didn't match request.base_url (http://localhost:3000)
+  [1m[36mUser Load (13.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3:in `create'
+Completed 201 Created in 370ms (Views: 0.3ms | ActiveRecord: 21.8ms | Allocations: 7391)
+
+
+Started GET "/api/products" for ::1 at 2019-11-20 18:32:18 -0600
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (8.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (7.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 82.7ms | Allocations: 9237)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 4.4ms | Allocations: 734)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.6ms | Allocations: 734)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.9ms | Allocations: 777)
+  [1m[36mCACHE Supplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 9.4ms | Allocations: 734)
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.5ms | Allocations: 828)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.1ms | Allocations: 776)
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.1ms | Allocations: 827)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.4ms | Allocations: 776)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.3ms | Allocations: 733)
+  Rendered api/products/index.json.jb (Duration: 181.9ms | Allocations: 24840)
+  [1m[36mImage Load (2.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (1.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+Completed 200 OK in 266ms (Views: 213.3ms | ActiveRecord: 38.7ms | Allocations: 48314)
+
+
+Started GET "/api/products/4" for ::1 at 2019-11-20 18:32:28 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:51:in `show'
+  Rendering api/products/show.json.jb
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.2ms | Allocations: 869)
+  Rendered api/products/show.json.jb (Duration: 4.0ms | Allocations: 1005)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:52:in `show'
+Completed 200 OK in 15ms (Views: 9.1ms | ActiveRecord: 1.3ms | Allocations: 3445)
+
+
+Started POST "/api/orders" for ::1 at 2019-11-20 18:32:32 -0600
+Processing by Api::OrdersController#create as HTML
+  Parameters: {"product_id"=>4, "quantity"=>"1", "order"=>{"product_id"=>4, "quantity"=>"1"}}
+HTTP Origin header (https://mini-capstone.netlify.com) didn't match request.base_url (http://localhost:3000)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/orders_controller.rb:13:in `create'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.7ms | Allocations: 2284)
+
+
+  
+NoMethodError (undefined method `quantity' for nil:NilClass):
+  
+app/controllers/api/orders_controller.rb:14:in `create'
+Started GET "/api/orders" for ::1 at 2019-11-20 18:32:34 -0600
+Processing by Api::OrdersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  Rendering api/orders/index.json.jb
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/orders/index.json.jb:1:in `map'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/api/orders/_order.json.jb:4
+  Rendered api/orders/_order.json.jb (Duration: 5.4ms | Allocations: 1678)
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/orders/_order.json.jb:4
+  Rendered api/orders/_order.json.jb (Duration: 1.9ms | Allocations: 779)
+  Rendered api/orders/index.json.jb (Duration: 20.9ms | Allocations: 8599)
+Completed 200 OK in 30ms (Views: 21.5ms | ActiveRecord: 3.1ms | Allocations: 11374)
+
+
+Started GET "/api/products" for ::1 at 2019-11-20 18:32:40 -0600
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.7ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.7ms | Allocations: 831)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.5ms | Allocations: 733)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.5ms | Allocations: 734)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.8ms | Allocations: 777)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.6ms | Allocations: 734)
+  [1m[36mSupplier Load (1.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 4.3ms | Allocations: 826)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.6ms | Allocations: 776)
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.9ms | Allocations: 827)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.3ms | Allocations: 776)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.1ms | Allocations: 733)
+  Rendered api/products/index.json.jb (Duration: 29.9ms | Allocations: 9180)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (1.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (1.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+Completed 200 OK in 62ms (Views: 52.8ms | ActiveRecord: 8.3ms | Allocations: 23344)
+
+
+Started GET "/api/products/2" for ::1 at 2019-11-20 18:32:58 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:51:in `show'
+  Rendering api/products/show.json.jb
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.6ms | Allocations: 825)
+  Rendered api/products/show.json.jb (Duration: 4.0ms | Allocations: 900)
+  [1m[36mImage Load (2.0ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:52:in `show'
+Completed 200 OK in 15ms (Views: 9.7ms | ActiveRecord: 2.6ms | Allocations: 3079)
+
+
+Started POST "/api/orders" for ::1 at 2019-11-20 18:33:01 -0600
+Processing by Api::OrdersController#create as HTML
+  Parameters: {"product_id"=>2, "quantity"=>"1", "order"=>{"product_id"=>2, "quantity"=>"1"}}
+HTTP Origin header (https://mini-capstone.netlify.com) didn't match request.base_url (http://localhost:3000)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/orders_controller.rb:13:in `create'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 2.0ms | Allocations: 2219)
+
+
+  
+NoMethodError (undefined method `quantity' for nil:NilClass):
+  
+app/controllers/api/orders_controller.rb:14:in `create'
+Started POST "/api/orders" for ::1 at 2019-11-20 18:34:44 -0600
+  
+SyntaxError (/Users/nezumi/Actualize/mini_capstone/app/controllers/api/orders_controller.rb:14: syntax error, unexpected ':', expecting end
+      subtotal: params[:quantity] * @product...
+              ^
+/Users/nezumi/Actualize/mini_capstone/app/controllers/api/orders_controller.rb:15: syntax error, unexpected ':', expecting end
+      tax: params[:quantity] * @product...
+         ^
+/Users/nezumi/Actualize/mini_capstone/app/controllers/api/orders_controller.rb:16: syntax error, unexpected ':', expecting end
+      total: params[:quantity] * @product...
+           ^):
+  
+app/controllers/api/orders_controller.rb:14: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:15: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:16: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:14: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:15: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:16: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:14: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:15: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:16: syntax error, unexpected ':', expecting end
+Started GET "/api/orders" for ::1 at 2019-11-20 18:34:46 -0600
+  
+SyntaxError (/Users/nezumi/Actualize/mini_capstone/app/controllers/api/orders_controller.rb:14: syntax error, unexpected ':', expecting end
+      subtotal: params[:quantity] * @product...
+              ^
+/Users/nezumi/Actualize/mini_capstone/app/controllers/api/orders_controller.rb:15: syntax error, unexpected ':', expecting end
+      tax: params[:quantity] * @product...
+         ^
+/Users/nezumi/Actualize/mini_capstone/app/controllers/api/orders_controller.rb:16: syntax error, unexpected ':', expecting end
+      total: params[:quantity] * @product...
+           ^):
+  
+app/controllers/api/orders_controller.rb:14: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:15: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:16: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:14: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:15: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:16: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:14: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:15: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:16: syntax error, unexpected ':', expecting end
+Started GET "/api/orders" for ::1 at 2019-11-20 18:35:14 -0600
+  
+SyntaxError (/Users/nezumi/Actualize/mini_capstone/app/controllers/api/orders_controller.rb:14: syntax error, unexpected ':', expecting end
+      subtotal: params[:quantity] * @product...
+              ^
+/Users/nezumi/Actualize/mini_capstone/app/controllers/api/orders_controller.rb:14: syntax error, unexpected ',', expecting end
+...ms[:quantity] * @product.price,
+...                              ^
+/Users/nezumi/Actualize/mini_capstone/app/controllers/api/orders_controller.rb:15: syntax error, unexpected ',', expecting end
+...rams[:quantity] * @product.tax,
+...                              ^
+/Users/nezumi/Actualize/mini_capstone/app/controllers/api/orders_controller.rb:16: syntax error, unexpected ',', expecting end
+...ms[:quantity] * @product.total,
+...                              ^):
+  
+app/controllers/api/orders_controller.rb:14: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:14: syntax error, unexpected ',', expecting end
+app/controllers/api/orders_controller.rb:15: syntax error, unexpected ',', expecting end
+app/controllers/api/orders_controller.rb:16: syntax error, unexpected ',', expecting end
+app/controllers/api/orders_controller.rb:14: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:14: syntax error, unexpected ',', expecting end
+app/controllers/api/orders_controller.rb:15: syntax error, unexpected ',', expecting end
+app/controllers/api/orders_controller.rb:16: syntax error, unexpected ',', expecting end
+app/controllers/api/orders_controller.rb:14: syntax error, unexpected ':', expecting end
+app/controllers/api/orders_controller.rb:14: syntax error, unexpected ',', expecting end
+app/controllers/api/orders_controller.rb:15: syntax error, unexpected ',', expecting end
+app/controllers/api/orders_controller.rb:16: syntax error, unexpected ',', expecting end
+Started GET "/api/orders" for ::1 at 2019-11-20 18:38:01 -0600
+Processing by Api::OrdersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  Rendering api/orders/index.json.jb
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/orders/index.json.jb:1:in `map'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/api/orders/_order.json.jb:4
+  Rendered api/orders/_order.json.jb (Duration: 37.4ms | Allocations: 10108)
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/orders/_order.json.jb:4
+  Rendered api/orders/_order.json.jb (Duration: 1.7ms | Allocations: 781)
+  Rendered api/orders/index.json.jb (Duration: 50.3ms | Allocations: 16590)
+Completed 200 OK in 80ms (Views: 46.9ms | ActiveRecord: 12.9ms | Allocations: 25002)
+
+
+Started GET "/api/products" for ::1 at 2019-11-20 18:38:05 -0600
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 20.7ms | Allocations: 7254)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.5ms | Allocations: 733)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.5ms | Allocations: 734)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.4ms | Allocations: 777)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.3ms | Allocations: 734)
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.1ms | Allocations: 826)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.4ms | Allocations: 776)
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.8ms | Allocations: 827)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.3ms | Allocations: 776)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.3ms | Allocations: 733)
+  Rendered api/products/index.json.jb (Duration: 41.5ms | Allocations: 15593)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (1.0ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+Completed 200 OK in 75ms (Views: 63.1ms | ActiveRecord: 11.2ms | Allocations: 33586)
+
+
+Started GET "/api/products/2" for ::1 at 2019-11-20 18:38:09 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:51:in `show'
+  Rendering api/products/show.json.jb
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.6ms | Allocations: 825)
+  Rendered api/products/show.json.jb (Duration: 2.9ms | Allocations: 900)
+  [1m[36mImage Load (2.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:52:in `show'
+Completed 200 OK in 14ms (Views: 6.8ms | ActiveRecord: 3.2ms | Allocations: 3184)
+
+
+Started POST "/api/orders" for ::1 at 2019-11-20 18:38:12 -0600
+Processing by Api::OrdersController#create as HTML
+  Parameters: {"product_id"=>2, "quantity"=>"1", "order"=>{"product_id"=>2, "quantity"=>"1"}}
+HTTP Origin header (https://mini-capstone.netlify.com) didn't match request.base_url (http://localhost:3000)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/orders_controller.rb:13:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/orders_controller.rb:26:in `create'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/orders_controller.rb:26:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/orders_controller.rb:26:in `create'
+  [1m[36mOrder Create (3.0ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "product_id", "quantity", "subtotal", "tax", "total", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 1], ["product_id", 2], ["quantity", 1], ["subtotal", "11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111.0"], ["tax", "111111111111111.0"], ["total", "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111.0"], ["created_at", "2019-11-21 00:38:12.398471"], ["updated_at", "2019-11-21 00:38:12.398471"]]
+  ↳ app/controllers/api/orders_controller.rb:26:in `create'
+  [1m[35m (2.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/orders_controller.rb:26:in `create'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 7.3ms | Allocations: 7722)
+
+
+  
+ActiveRecord::RangeError (PG::NumericValueOutOfRange: ERROR:  numeric field overflow
+DETAIL:  A field with precision 9, scale 2 must round to an absolute value less than 10^7.
+):
+  
+app/controllers/api/orders_controller.rb:26:in `create'
+Started GET "/api/orders" for ::1 at 2019-11-20 18:38:14 -0600
+Processing by Api::OrdersController#index as HTML
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  Rendering api/orders/index.json.jb
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/orders/index.json.jb:1:in `map'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/api/orders/_order.json.jb:4
+  Rendered api/orders/_order.json.jb (Duration: 1.8ms | Allocations: 781)
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/orders/_order.json.jb:4
+  Rendered api/orders/_order.json.jb (Duration: 1.9ms | Allocations: 779)
+  Rendered api/orders/index.json.jb (Duration: 6.5ms | Allocations: 2356)
+Completed 200 OK in 19ms (Views: 7.7ms | ActiveRecord: 5.0ms | Allocations: 4445)
+
+
+Started GET "/api/products" for ::1 at 2019-11-20 18:39:41 -0600
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 32.8ms | Allocations: 7292)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.5ms | Allocations: 733)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.3ms | Allocations: 734)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.3ms | Allocations: 777)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.3ms | Allocations: 734)
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.2ms | Allocations: 826)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.0ms | Allocations: 776)
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.9ms | Allocations: 827)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.4ms | Allocations: 776)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.3ms | Allocations: 733)
+  Rendered api/products/index.json.jb (Duration: 62.4ms | Allocations: 21742)
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (6.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+Completed 200 OK in 108ms (Views: 83.2ms | ActiveRecord: 20.0ms | Allocations: 42404)
+
+
+Started GET "/api/products/2" for ::1 at 2019-11-20 18:39:44 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:51:in `show'
+  Rendering api/products/show.json.jb
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 4.6ms | Allocations: 825)
+  Rendered api/products/show.json.jb (Duration: 5.2ms | Allocations: 900)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:52:in `show'
+Completed 200 OK in 16ms (Views: 9.4ms | ActiveRecord: 2.1ms | Allocations: 3184)
+
+
+Started POST "/api/orders" for ::1 at 2019-11-20 18:39:46 -0600
+Processing by Api::OrdersController#create as HTML
+  Parameters: {"product_id"=>2, "quantity"=>"1", "order"=>{"product_id"=>2, "quantity"=>"1"}}
+HTTP Origin header (https://mini-capstone.netlify.com) didn't match request.base_url (http://localhost:3000)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/orders_controller.rb:13:in `create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/orders_controller.rb:26:in `create'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/orders_controller.rb:26:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/orders_controller.rb:26:in `create'
+  [1m[36mOrder Create (3.4ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "product_id", "quantity", "subtotal", "tax", "total", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 1], ["product_id", 2], ["quantity", 1], ["subtotal", "149.99"], ["tax", "15.37"], ["total", "165.36"], ["created_at", "2019-11-21 00:39:46.388708"], ["updated_at", "2019-11-21 00:39:46.388708"]]
+  ↳ app/controllers/api/orders_controller.rb:26:in `create'
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/orders_controller.rb:26:in `create'
+  Rendering api/orders/show.json.jb
+  Rendered api/orders/_order.json.jb (Duration: 0.1ms | Allocations: 24)
+  Rendered api/orders/show.json.jb (Duration: 1.8ms | Allocations: 159)
+Completed 200 OK in 65ms (Views: 3.6ms | ActiveRecord: 28.8ms | Allocations: 17828)
+
+
+Started GET "/api/orders/12" for ::1 at 2019-11-20 18:39:46 -0600
+Processing by Api::OrdersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/orders_controller.rb:36:in `show'
+  Rendering api/orders/show.json.jb
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/orders/_order.json.jb:4
+  Rendered api/orders/_order.json.jb (Duration: 2.0ms | Allocations: 777)
+  Rendered api/orders/show.json.jb (Duration: 2.3ms | Allocations: 852)
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 0.9ms | Allocations: 2764)
+
+
+Started GET "/api/products" for ::1 at 2019-11-20 18:39:48 -0600
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.2ms | Allocations: 829)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.9ms | Allocations: 733)
+  [1m[36mCACHE Supplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.6ms | Allocations: 734)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.3ms | Allocations: 777)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.3ms | Allocations: 734)
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.8ms | Allocations: 826)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.6ms | Allocations: 776)
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.8ms | Allocations: 827)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.5ms | Allocations: 776)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.6ms | Allocations: 733)
+  Rendered api/products/index.json.jb (Duration: 24.4ms | Allocations: 9168)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (1.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+Completed 200 OK in 51ms (Views: 45.1ms | ActiveRecord: 5.3ms | Allocations: 23320)
+
+
+Started GET "/api/orders" for ::1 at 2019-11-20 18:39:49 -0600
+Processing by Api::OrdersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  Rendering api/orders/index.json.jb
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/orders/index.json.jb:1:in `map'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/api/orders/_order.json.jb:4
+  Rendered api/orders/_order.json.jb (Duration: 2.0ms | Allocations: 781)
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/orders/_order.json.jb:4
+  Rendered api/orders/_order.json.jb (Duration: 2.8ms | Allocations: 779)
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/orders/_order.json.jb:4
+  Rendered api/orders/_order.json.jb (Duration: 2.7ms | Allocations: 675)
+  Rendered api/orders/index.json.jb (Duration: 12.1ms | Allocations: 3110)
+Completed 200 OK in 21ms (Views: 13.7ms | ActiveRecord: 1.7ms | Allocations: 5455)
+
+
+Started GET "/api/products" for ::1 at 2019-11-20 18:56:10 -0600
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 15.3ms | Allocations: 7065)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.6ms | Allocations: 733)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 9.1ms | Allocations: 734)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.5ms | Allocations: 777)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.4ms | Allocations: 734)
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.9ms | Allocations: 826)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.4ms | Allocations: 776)
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.2ms | Allocations: 827)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.4ms | Allocations: 776)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.4ms | Allocations: 733)
+  Rendered api/products/index.json.jb (Duration: 49.6ms | Allocations: 21506)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+Completed 200 OK in 90ms (Views: 71.9ms | ActiveRecord: 5.4ms | Allocations: 41790)
+
+
+Started GET "/api/orders" for ::1 at 2019-11-20 18:56:11 -0600
+Processing by Api::OrdersController#index as HTML
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 121)
+
+
+Started GET "/api/orders/1" for ::1 at 2019-11-20 18:56:18 -0600
+Processing by Api::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 118)
+
+
+Started POST "/api/sessions" for ::1 at 2019-11-20 18:56:55 -0600
+Processing by Api::SessionsController#create as HTML
+  Parameters: {"email"=>"test@email.com", "password"=>"[FILTERED]", "session"=>{"email"=>"test@email.com", "password"=>"[FILTERED]"}}
+HTTP Origin header (https://mini-capstone.netlify.com) didn't match request.base_url (http://localhost:3000)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/sessions_controller.rb:3:in `create'
+Completed 201 Created in 315ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 5347)
+
+
+Started GET "/api/products" for ::1 at 2019-11-20 18:56:55 -0600
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (10.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.6ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 4.5ms | Allocations: 829)
+  [1m[36mCACHE Supplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.6ms | Allocations: 733)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 4.8ms | Allocations: 734)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.6ms | Allocations: 777)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.9ms | Allocations: 734)
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.2ms | Allocations: 826)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.7ms | Allocations: 776)
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.4ms | Allocations: 827)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.7ms | Allocations: 776)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.4ms | Allocations: 733)
+  Rendered api/products/index.json.jb (Duration: 58.8ms | Allocations: 9168)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+Completed 200 OK in 109ms (Views: 93.2ms | ActiveRecord: 15.0ms | Allocations: 23322)
+
+
+Started GET "/api/orders" for ::1 at 2019-11-20 18:56:57 -0600
+Processing by Api::OrdersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  Rendering api/orders/index.json.jb
+  [1m[36mOrder Load (2.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/api/orders/index.json.jb:1:in `map'
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/api/orders/_order.json.jb:4
+  Rendered api/orders/_order.json.jb (Duration: 7.6ms | Allocations: 1606)
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/api/orders/_order.json.jb:4
+  Rendered api/orders/_order.json.jb (Duration: 2.7ms | Allocations: 779)
+  Rendered api/orders/index.json.jb (Duration: 26.6ms | Allocations: 8089)
+Completed 200 OK in 38ms (Views: 25.2ms | ActiveRecord: 3.9ms | Allocations: 11357)
+
+
+Started GET "/api/orders/10" for ::1 at 2019-11-20 18:57:00 -0600
+Processing by Api::OrdersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `current_user'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/orders_controller.rb:36:in `show'
+  Rendering api/orders/show.json.jb
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/api/orders/_order.json.jb:4
+  Rendered api/orders/_order.json.jb (Duration: 2.0ms | Allocations: 777)
+  Rendered api/orders/show.json.jb (Duration: 2.2ms | Allocations: 852)
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 1.0ms | Allocations: 2749)
+
+
+Started GET "/api/products" for ::1 at 2019-11-20 18:57:03 -0600
+Processing by Api::ProductsController#index as HTML
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.8ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 5.9ms | Allocations: 829)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.4ms | Allocations: 733)
+  [1m[36mCACHE Supplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.9ms | Allocations: 734)
+  [1m[36mCACHE Supplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.8ms | Allocations: 777)
+  [1m[36mCACHE Supplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.8ms | Allocations: 734)
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.2ms | Allocations: 826)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.3ms | Allocations: 776)
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.3ms | Allocations: 827)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.4ms | Allocations: 776)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.5ms | Allocations: 733)
+  Rendered api/products/index.json.jb (Duration: 34.5ms | Allocations: 9168)
+  [1m[36mImage Load (2.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (1.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:27:in `index'
+Completed 200 OK in 65ms (Views: 55.4ms | ActiveRecord: 8.7ms | Allocations: 23319)
+
+
+Started GET "/api/products/10" for ::1 at 2019-11-20 19:01:51 -0600
+Processing by Api::ProductsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:51:in `show'
+  Rendering api/products/show.json.jb
+  [1m[36mSupplier Load (1.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 40.7ms | Allocations: 7262)
+  Rendered api/products/show.json.jb (Duration: 41.2ms | Allocations: 7337)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:52:in `show'
+Completed 200 OK in 84ms (Views: 46.0ms | ActiveRecord: 20.5ms | Allocations: 22457)
+
+
+Started GET "/api/orders" for ::1 at 2019-11-20 19:01:58 -0600
+Processing by Api::OrdersController#index as HTML
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 184)
+
+
+Started GET "/api/orders/10" for ::1 at 2019-11-20 19:02:01 -0600
+Processing by Api::OrdersController#show as HTML
+  Parameters: {"id"=>"10"}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 136)
+
+
