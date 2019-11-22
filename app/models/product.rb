@@ -15,7 +15,9 @@ class Product < ApplicationRecord
   has_many :categories, through: :category_products
 
   scope :discounted, ->(value) { where("on_sale = ?", value) }
-  # scope :search_by_name, ->(search) { where("name ILIKE ?, search: "%#{search}%") }
+  # scope :search_by_name, ->(search) { where("name ILIKE ?", search) }
+  scope :sort_by_price, ->(sort_order) { order(price: sort_order) }
+  scope :default_sort, -> { order(id: :asc) }
 
   def on_sale?
     @products = []

@@ -4,10 +4,9 @@ class Api::ProductsController < ApplicationController
   def index
     @products = Product.all
 
-    # if params[:search]
-    #   # @products = @products.search_by_name
-    #   @products = @products.where("name ILIKE ?", "%#{params[:search]}%")
-    # end
+    if params[:search]
+      @products = @products.where("name ILIKE ?", "%#{params[:search]}%")
+    end
     # commented out for compatibility with front end
     # if params[:q]
     #   @products = @products.where("name ILIKE ?", "%#{params[:q]}%")
@@ -21,18 +20,12 @@ class Api::ProductsController < ApplicationController
     if params[:discount]
       @products = @products.discounted(params[:discount])
     end
-    # commented out for compatibility with front end
-    # if params[:sale]
-    #   @products = @products.discounted(params[:sale])
-    # end
 
-    # if params[:sort] == "price" && params[:sort_order] == "asc"
-    #   @products = @products.order(price: :asc)
-    # elsif params[:sort] == "price" && params[:sort_order] == "desc"
-    #   @products = @products.order(price: :desc)
-    # else
-    #   @products = @products.order(id: :asc)
-    # end
+    if params[:sort] == "price"
+      @products = @products.sort_by_price(params[:sort_order])
+    else
+      @products = @products.default_sort
+    end
 
     render "index.json.jb"
   end
