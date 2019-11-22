@@ -4,20 +4,13 @@ class Api::ProductsController < ApplicationController
   def index
     @products = Product.all
 
-    if params[:search]
-      # @products = @products.find_by_name
-      @products = @products.where("name ILIKE ?", "%#{params[:search]}%")
-    end
+    # if params[:search]
+    #   # @products = @products.search_by_name
+    #   @products = @products.where("name ILIKE ?", "%#{params[:search]}%")
+    # end
     # commented out for compatibility with front end
     # if params[:q]
     #   @products = @products.where("name ILIKE ?", "%#{params[:q]}%")
-    # end
-    if params[:discount]
-      @products = @products.where("on_sale = ?", params[:discount].to_s)
-    end
-    # commented out for compatibility with front end
-    # if params[:sale]
-    #   @products = @products.where("on_sale = ?", "#{params[:sale]}")
     # end
 
     if params[:category]
@@ -25,13 +18,21 @@ class Api::ProductsController < ApplicationController
       @products = category.products
     end
 
-    if params[:sort] == "price" && params[:sort_order] == "asc"
-      @products = @products.order(price: :asc)
-    elsif params[:sort] == "price" && params[:sort_order] == "desc"
-      @products = @products.order(price: :desc)
-    else
-      @products = @products.order(id: :asc)
+    if params[:discount]
+      @products = @products.discounted(params[:discount])
     end
+    # commented out for compatibility with front end
+    # if params[:sale]
+    #   @products = @products.discounted(params[:sale])
+    # end
+
+    # if params[:sort] == "price" && params[:sort_order] == "asc"
+    #   @products = @products.order(price: :asc)
+    # elsif params[:sort] == "price" && params[:sort_order] == "desc"
+    #   @products = @products.order(price: :desc)
+    # else
+    #   @products = @products.order(id: :asc)
+    # end
 
     render "index.json.jb"
   end
