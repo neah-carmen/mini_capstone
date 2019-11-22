@@ -18,6 +18,12 @@ class Api::ProductsController < ApplicationController
     # if params[:sale]
     #   @products = @products.where("on_sale = ?", "#{params[:sale]}")
     # end
+
+    if params[:category]
+      category = Category.find_by(name: params[:category])
+      @products = category.products
+    end
+
     if params[:sort] == "price" && params[:sort_order] == "asc"
       @products = @products.order(price: :asc)
     elsif params[:sort] == "price" && params[:sort_order] == "desc"
