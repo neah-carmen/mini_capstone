@@ -13288,3 +13288,84 @@ Processing by Api::ProductsController#index as */*
 Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 1.9ms | Allocations: 6281)
 
 
+Started GET "/api/products?category=Tops" for ::1 at 2019-11-21 20:00:45 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#index as */*
+  Parameters: {"category"=>"Tops"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Tops"], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:23:in `index'
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "category_products" ON "products"."id" = "category_products"."product_id" WHERE "category_products"."category_id" = $1 ORDER BY "products"."id" ASC[0m  [["category_id", 3]]
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 397.1ms | Allocations: 124013)
+  Rendered api/products/index.json.jb (Duration: 429.5ms | Allocations: 131930)
+Completed 500 Internal Server Error in 539ms (ActiveRecord: 17.9ms | Allocations: 148273)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `category' for #<#<Class:0x00007ff47199ab48>:0x00007ff4719baf38>):
+    20:     phone_number: product.supplier.phone_number,
+    21:   },
+    22:   images: product.images,
+    23:   categories: category.products,
+    24: }
+  
+app/views/api/products/_product.json.jb:23
+app/views/api/products/index.json.jb:2
+app/views/api/products/index.json.jb:1:in `map'
+app/views/api/products/index.json.jb:1
+app/controllers/api/products_controller.rb:35:in `index'
+Started GET "/api/products?category=Tops" for ::1 at 2019-11-21 20:01:04 -0600
+Processing by Api::ProductsController#index as */*
+  Parameters: {"category"=>"Tops"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Tops"], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:23:in `index'
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "category_products" ON "products"."id" = "category_products"."product_id" WHERE "category_products"."category_id" = $1 ORDER BY "products"."id" ASC[0m  [["category_id", 3]]
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.3ms | Allocations: 1624)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.1ms | Allocations: 824)
+  Rendered api/products/index.json.jb (Duration: 9.0ms | Allocations: 3524)
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:35:in `index'
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:35:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:35:in `index'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:35:in `index'
+Completed 200 OK in 70ms (Views: 58.6ms | ActiveRecord: 8.4ms | Allocations: 16080)
+
+
+Started GET "/api/products?category=Undergarments" for ::1 at 2019-11-21 20:01:17 -0600
+Processing by Api::ProductsController#index as */*
+  Parameters: {"category"=>"Undergarments"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Undergarments"], ["LIMIT", 1]]
+  ↳ app/controllers/api/products_controller.rb:23:in `index'
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" INNER JOIN "category_products" ON "products"."id" = "category_products"."product_id" WHERE "category_products"."category_id" = $1 ORDER BY "products"."id" ASC[0m  [["category_id", 2]]
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.5ms | Allocations: 875)
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.4ms | Allocations: 916)
+  Rendered api/products/index.json.jb (Duration: 8.3ms | Allocations: 2619)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:35:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:35:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:35:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:35:in `index'
+Completed 200 OK in 21ms (Views: 16.1ms | ActiveRecord: 3.0ms | Allocations: 9119)
+
+
