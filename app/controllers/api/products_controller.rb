@@ -5,6 +5,7 @@ class Api::ProductsController < ApplicationController
     @products = Product.all
 
     if params[:search]
+      # @products = @products.find_by_name
       @products = @products.where("name ILIKE ?", "%#{params[:search]}%")
     end
     # commented out for compatibility with front end
