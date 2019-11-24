@@ -1,6 +1,8 @@
 class Api::ShoppingCartsController < ApplicationController
+  before_action :authenticate_user
+
   def index
-    @shopping_carts = ShoppingCart.all
+    @shopping_carts = ShoppingCart.where("status LIKE ?", "Carted")
     render "index.json.jb"
   end
 
