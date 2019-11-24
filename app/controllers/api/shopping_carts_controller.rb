@@ -18,7 +18,8 @@ class Api::ShoppingCartsController < ApplicationController
   end
 
   def show
-    render json: { message: "yo" }
+    @shopping_cart = ShoppingCart.find_by(id: params[:id])
+    render "show.json.jb"
   end
 
   def update
@@ -26,6 +27,9 @@ class Api::ShoppingCartsController < ApplicationController
   end
 
   def destroy
-    render json: { message: "yo" }
+    @shopping_cart = ShoppingCart.find_by(id: params[:id])
+    @shopping_cart.status = "Removed"
+    @shopping_cart.save
+    render json: { message: "Product removed from your shopping cart." }
   end
 end
