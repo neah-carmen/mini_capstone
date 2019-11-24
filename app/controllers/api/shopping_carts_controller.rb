@@ -1,10 +1,16 @@
 class Api::ShoppingCartsController < ApplicationController
   def index
-    render json: { message: "yo" }
+    @shopping_carts = ShoppingCart.all
+    render "index.json.jb"
   end
 
   def create
-    render json: { message: "yo" }
+    @shopping_cart = ShoppingCart.new(
+      product_id: params[:product_id],
+      quantity: params[:quantity],
+    )
+    @shopping_cart.save
+    render "show.json.jb"
   end
 
   def show
