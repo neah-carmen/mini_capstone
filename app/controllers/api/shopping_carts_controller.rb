@@ -6,8 +6,10 @@ class Api::ShoppingCartsController < ApplicationController
 
   def create
     @shopping_cart = ShoppingCart.new(
+      user_id: current_user.id,
       product_id: params[:product_id],
       quantity: params[:quantity],
+      status: "Carted",
     )
     @shopping_cart.save
     render "show.json.jb"
