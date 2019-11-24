@@ -13,9 +13,6 @@ class Api::OrdersController < ApplicationController
     total = params[:quantity].to_i * @product.total
 
     @order = Order.new(
-      user_id: current_user.id,
-      product_id: params[:product_id],
-      quantity: params[:quantity],
       subtotal: subtotal,
       tax: tax,
       total: total,
