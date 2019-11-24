@@ -20877,3 +20877,380 @@ Processing by Api::ProductsController#index as */*
 Completed 200 OK in 72ms (Views: 63.2ms | ActiveRecord: 8.0ms | Allocations: 36293)
 
 
+Started GET "/api/products?sort=price&sort_order=asc" for ::1 at 2019-11-22 13:40:24 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProductsController#index as */*
+  Parameters: {"sort"=>"price", "sort_order"=>"asc"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1254)
+
+
+  
+SyntaxError (/Users/nezumi/Actualize/mini_capstone/app/models/product.rb:19: syntax error, unexpected tIDENTIFIER, expecting ')'
+...r) { order(price: ?, sort_order) }
+...                     ^~~~~~~~~~
+/Users/nezumi/Actualize/mini_capstone/app/models/product.rb:25: syntax error, unexpected do (for lambda)
+    db_extract.each do |product|
+                    ^~
+/Users/nezumi/Actualize/mini_capstone/app/models/product.rb:28: syntax error, unexpected end, expecting '}'
+  end
+  ^~~
+/Users/nezumi/Actualize/mini_capstone/app/models/product.rb:81: syntax error, unexpected end, expecting '}'):
+  
+app/models/product.rb:19: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/models/product.rb:25: syntax error, unexpected do (for lambda)
+app/models/product.rb:28: syntax error, unexpected end, expecting '}'
+app/models/product.rb:81: syntax error, unexpected end, expecting '}'
+app/models/product.rb:19: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/models/product.rb:25: syntax error, unexpected do (for lambda)
+app/models/product.rb:28: syntax error, unexpected end, expecting '}'
+app/models/product.rb:81: syntax error, unexpected end, expecting '}'
+app/models/product.rb:19: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/models/product.rb:25: syntax error, unexpected do (for lambda)
+app/models/product.rb:28: syntax error, unexpected end, expecting '}'
+app/models/product.rb:81: syntax error, unexpected end, expecting '}'
+app/controllers/api/products_controller.rb:5:in `index'
+Started GET "/api/products?sort=price&sort_order=asc" for ::1 at 2019-11-22 13:40:41 -0600
+Processing by Api::ProductsController#index as */*
+  Parameters: {"sort"=>"price", "sort_order"=>"asc"}
+DEPRECATION WARNING: Dangerous query method (method whose arguments are used as raw SQL) called with non-attribute argument(s): "price: ?". Non-attribute arguments will be disallowed in Rails 6.1. This method should not be called with user-provided values, such as request parameters or model attributes. Known-safe values can be passed by wrapping them in Arel.sql(). (called from block in <class:Product> at /Users/nezumi/Actualize/mini_capstone/app/models/product.rb:19)
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (9.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY price: ?, asc[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  Rendered api/products/index.json.jb (Duration: 11.7ms | Allocations: 2043)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 9.1ms | Allocations: 8078)
+
+
+  
+ActionView::Template::Error (PG::SyntaxError: ERROR:  syntax error at or near ":"
+LINE 1: SELECT "products".* FROM "products" ORDER BY price: ?, asc
+                                                          ^
+):
+    1: @products.map do |product|
+    2:   render partial: "product.json.jb", locals: { product: product }
+    3: end
+  
+app/views/api/products/index.json.jb:1:in `map'
+app/views/api/products/index.json.jb:1
+app/controllers/api/products_controller.rb:30:in `index'
+Started GET "/api/products?sort=price&sort_order=asc" for ::1 at 2019-11-22 13:41:06 -0600
+Processing by Api::ProductsController#index as */*
+  Parameters: {"sort"=>"price", "sort_order"=>"asc"}
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."price" ASC[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (1.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 58.1ms | Allocations: 12911)
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 3.8ms | Allocations: 916)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.8ms | Allocations: 780)
+  [1m[36mSupplier Load (5.8ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 9.0ms | Allocations: 872)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.9ms | Allocations: 822)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.7ms | Allocations: 779)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.8ms | Allocations: 823)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.7ms | Allocations: 779)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.8ms | Allocations: 780)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.3ms | Allocations: 780)
+  Rendered api/products/index.json.jb (Duration: 108.6ms | Allocations: 28437)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (2.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (1.1ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+Completed 200 OK in 215ms (Views: 166.4ms | ActiveRecord: 39.4ms | Allocations: 68161)
+
+
+Started GET "/api/products?sort=price&sort_order=desc" for ::1 at 2019-11-22 13:41:11 -0600
+Processing by Api::ProductsController#index as */*
+  Parameters: {"sort"=>"price", "sort_order"=>"desc"}
+  Rendering api/products/index.json.jb
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."price" DESC[0m
+  ↳ app/views/api/products/index.json.jb:1:in `map'
+  [1m[36mSupplier Load (0.5ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.5ms | Allocations: 876)
+  [1m[36mCACHE Supplier Load (0.1ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.7ms | Allocations: 780)
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.4ms | Allocations: 873)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.7ms | Allocations: 823)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.2ms | Allocations: 779)
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.7ms | Allocations: 915)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.8ms | Allocations: 779)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 1.7ms | Allocations: 779)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.1ms | Allocations: 822)
+  [1m[36mCACHE Supplier Load (0.0ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/products/_product.json.jb:18
+  Rendered api/products/_product.json.jb (Duration: 2.5ms | Allocations: 779)
+  Rendered api/products/index.json.jb (Duration: 27.4ms | Allocations: 9644)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 5]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 3]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (2.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 8]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 4]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 10]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 7]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 6]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 1]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 9]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "category_products" ON "categories"."id" = "category_products"."category_id" WHERE "category_products"."product_id" = $1[0m  [["product_id", 2]]
+  ↳ app/controllers/api/products_controller.rb:30:in `index'
+Completed 200 OK in 92ms (Views: 80.2ms | ActiveRecord: 10.7ms | Allocations: 36319)
+
+
+  [1m[35m (597.1ms)[0m  [1m[35mCREATE DATABASE "mini_capstone_development" ENCODING = 'unicode'[0m
+  [1m[35m (436.1ms)[0m  [1m[35mCREATE DATABASE "mini_capstone_test" ENCODING = 'unicode'[0m
+  [1m[35m (40.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (19.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4423496750447225430)[0m
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProducts (20191106020302)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.5ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "price" integer, "currency_code" character varying, "stock" integer, "image_url" character varying, "description" character varying, "on_sale" boolean, "discount" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106020302"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeProductPriceToDecimal (20191113014929)
+  [1m[35m (6.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (30.2ms)[0m  [1m[35mALTER TABLE "products" ALTER COLUMN "price" TYPE decimal(9,2)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191113014929"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeProductDescriptionToText (20191113015546)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "products" ALTER COLUMN "description" TYPE text[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191113015546"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSuppliers (20191115031246)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.6ms)[0m  [1m[35mCREATE TABLE "suppliers" ("id" bigserial primary key, "name" character varying, "email" character varying, "phone_number" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191115031246"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddSupplierIdToProductModel (20191115031735)
+  [1m[35m (6.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "products" ADD "supplier_id" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191115031735"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateImages (20191117164122)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE TABLE "images" ("id" bigserial primary key, "url" character varying, "product_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191117164122"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveImageUrlFromProducts (20191117164530)
+  [1m[35m (11.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "products" DROP COLUMN "image_url"[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191117164530"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20191119024249)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191119024249"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrders (20191120015957)
+  [1m[35m (6.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" integer, "product_id" integer, "quantity" integer, "subtotal" decimal(9,2), "tax" decimal(9,2), "total" decimal(9,2), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191120015957"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdminToUsers (20191121012139)
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.5ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT FALSE[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191121012139"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20191122003914)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191122003914"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategoryProducts (20191122003944)
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "category_products" ("id" bigserial primary key, "category_id" integer, "product_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191122003944"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateShoppingCarts (20191124163132)
+  [1m[35m (6.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (19.5ms)[0m  [1m[35mCREATE TABLE "shopping_carts" ("id" bigserial primary key, "user_id" integer, "product_id" integer, "quantity" integer, "status" character varying, "order_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191124163132"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (7.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-24 16:33:41.495526"], ["updated_at", "2019-11-24 16:33:41.495526"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4423496750447225430)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSupplier Load (0.7ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSupplier Create (1.2ms)[0m  [1m[32mINSERT INTO "suppliers" ("name", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Moi Meme Moitie"], ["email", "info@moi-meme-moitie.com"], ["phone_number", "+81.927137999"], ["created_at", "2019-11-24 16:34:14.293886"], ["updated_at", "2019-11-24 16:34:14.293886"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSupplier Create (0.3ms)[0m  [1m[32mINSERT INTO "suppliers" ("name", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Baby, The Stars Shine Bright"], ["email", "info@baby-aatp.com"], ["phone_number", "+1.7147064182"], ["created_at", "2019-11-24 16:34:14.300580"], ["updated_at", "2019-11-24 16:34:14.300580"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSupplier Create (0.3ms)[0m  [1m[32mINSERT INTO "suppliers" ("name", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gloomth"], ["email", "taeden@gloomth.com"], ["phone_number", "+1.6473479469"], ["created_at", "2019-11-24 16:34:14.305614"], ["updated_at", "2019-11-24 16:34:14.305614"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m

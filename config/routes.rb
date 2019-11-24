@@ -21,6 +21,12 @@ Rails.application.routes.draw do
     patch "/images/:id" => "images#update"
     delete "/images/:id" => "images#destroy"
 
+    get "/shopping_carts" => "shopping_carts#index"
+    post "/shopping_carts" => "shopping_carts#create"
+    get "/shopping_carts/:id" => "shopping_carts#show"
+    patch "/shopping_carts/:id" => "shopping_carts#update"
+    delete "/shopping_carts/:id" => "shopping_carts#destroy"
+
     get "/orders" => "orders#index"
     post "/orders" => "orders#create"
     get "/orders/:id" => "orders#show"

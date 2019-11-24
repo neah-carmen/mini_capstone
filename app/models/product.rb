@@ -13,9 +13,10 @@ class Product < ApplicationRecord
   has_many :orders
   has_many :category_products
   has_many :categories, through: :category_products
+  has_many :shopping_carts
 
-  scope :discounted, ->(value) { where("on_sale = ?", value) }
   # scope :search_by_name, ->(search) { where("name ILIKE ?", search) }
+  scope :discounted, ->(value) { where("on_sale = ?", value) }
   scope :sort_by_price, ->(sort_order) { order(price: sort_order) }
   scope :default_sort, -> { order(id: :asc) }
 
