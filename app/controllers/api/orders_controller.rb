@@ -23,6 +23,10 @@ class Api::OrdersController < ApplicationController
       total: total,
     )
     if @order.save
+      shopping_cart = ShoppingCart.find_by(status: "Carted")
+      shopping_cart.status = "Purchased"
+      shopping_cart.order_id = @order.id
+      shopping_cart.save
       render "show.json.jb"
     else
       render json: { errors: @order.errors.full_messages }, status: :unprocessable_entity
