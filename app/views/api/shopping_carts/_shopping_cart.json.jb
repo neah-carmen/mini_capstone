@@ -1,8 +1,7 @@
 {
   id: shopping_cart.id,
-  product_id: shopping_cart.product_id,
+  product: shopping_cart.product,
   order_id: shopping_cart.order_id,
   user_id: shopping_cart.user_id,
   quantity: shopping_cart.quantity,
-  product: shopping_cart.product,
 }
