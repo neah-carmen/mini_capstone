@@ -5,18 +5,18 @@ class Order < ApplicationRecord
   has_many :products, through: :shopping_carts
 
   def calculations
-    cart_subtotal = 0
-    cart_taxes = 0
+    subtotal = 0
+    taxes = 0
 
     shopping_carts.each do |item|
-      cart_subtotal += (item.product.price * item.quantity)
-      cart_taxes += (item.product.tax * item.quantity)
+      subtotal += (item.product.price * item.quantity)
+      taxes += (item.product.tax * item.quantity)
     end
 
-    cart_total = cart_subtotal + cart_taxes
-    self.subtotal = cart_subtotal
-    self.tax = cart_taxes
-    self.total = cart_total
+    total = subtotal + taxes
+    self.subtotal = subtotal
+    self.tax = taxes
+    self.total = total
     self.save
   end
 end
