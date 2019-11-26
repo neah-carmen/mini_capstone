@@ -27,7 +27,7 @@ class Api::ShoppingCartsController < ApplicationController
   end
 
   def destroy
-    @shopping_cart = ShoppingCart.find_by(id: params[:id])
+    @shopping_cart = current_user.shopping_carts.find_by(id: params[:id])
     @shopping_cart.status = "Removed"
     @shopping_cart.save
     render json: { message: "Product removed from your shopping cart." }
