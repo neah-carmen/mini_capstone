@@ -4,4 +4,11 @@
   subtotal: order.subtotal,
   tax: order.tax,
   total: order.total,
+  shopping_carts: order.shopping_carts.map do |item|
+    {
+      id: item.id,
+      quantity: item.quantity,
+      product: item.product,
+    }
+  end,
 }
