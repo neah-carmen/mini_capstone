@@ -6,6 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Supplier.create(
+  name: "Moi Meme Moitie",
+  email: "info@moi-meme-moitie.com",
+  phone_number: "+81.927137999",
+)
+Supplier.create(
+  name: "Baby, The Stars Shine Bright",
+  email: "info@baby-aatp.com",
+  phone_number: "+1.7147064182",
+)
+Supplier.create(
+  name: "Gloomth",
+  email: "taeden@gloomth.com",
+  phone_number: "+1.6473479469",
+)
 Product.create(
   name: "Pannier",
   price: 149.99,
@@ -165,21 +180,6 @@ Image.create(
 Image.create(
   url: "https://res.cloudinary.com/puereveryday/image/upload/v1574043604/actualize/yezxxstlb1ixoxdovybt.jpg",
   product_id: 10,
-)
-Supplier.create(
-  name: "Moi Meme Moitie",
-  email: "info@moi-meme-moitie.com",
-  phone_number: "+81.927137999",
-)
-Supplier.create(
-  name: "Baby, The Stars Shine Bright",
-  email: "info@baby-aatp.com",
-  phone_number: "+1.7147064182",
-)
-Supplier.create(
-  name: "Gloomth",
-  email: "taeden@gloomth.com",
-  phone_number: "+1.6473479469",
 )
 
 p "Success!"
