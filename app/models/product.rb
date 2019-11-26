@@ -10,10 +10,10 @@ class Product < ApplicationRecord
   belongs_to :supplier
 
   has_many :images
+  has_many :shopping_carts
   has_many :orders, through: :shopping_carts
   has_many :category_products
   has_many :categories, through: :category_products
-  has_many :shopping_carts
 
   # scope :search_by_name, ->(search) { where("name ILIKE ?", search) }
   scope :discounted, ->(value) { where("on_sale = ?", value) }
