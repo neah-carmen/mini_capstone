@@ -1,1 +1,1 @@
-@shopping_cart
+render partial: "shopping_cart.json.jb", locals: { shopping_cart: @shopping_cart }

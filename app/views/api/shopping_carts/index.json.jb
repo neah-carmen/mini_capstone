@@ -1,1 +1,3 @@
-@shopping_carts
+@shopping_carts.map do |shopping_cart|
+  render partial: "shopping_cart.json.jb", locals: { shopping_cart: shopping_cart }
+end
