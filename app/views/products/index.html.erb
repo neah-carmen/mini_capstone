@@ -2,26 +2,28 @@
 <% @products.each do |product| %>
 <div>
 <h3>
-Name: <%= product.name %>
-Price: <%= product.price %>
+  Name: <%= product.name %>
+  Price: <%= product.price %>
 </h3>
 <p>
-stock: <%= product.stock %>
-description: <%= product.description %>
-on_sale: <%= product.on_sale %>
-discount: <%= product.discount %>
+  stock: <%= product.stock %>
+  description: <%= product.description %>
+  on_sale: <%= product.on_sale %>
+  discount: <%= product.discount %>
 </p>
-<p> formatted:
-    in_stock: <%= product.in_stock? %>
-    formatted_discount: <%= product.formatted_discount %>
-    formatted_price: <%= product.formatted_price %>
-    total: <%= product.total %>
-    formatted_total: <%= product.formatted_total %>
+<p>
+  formatted:
+  in_stock: <%= product.in_stock? %>
+  formatted_discount: <%= product.formatted_discount %>
+  formatted_price: <%= product.formatted_price %>
+  total: <%= product.total %>
+  formatted_total: <%= product.formatted_total %>
 </p>
-<p> supplier:
-    name: <%= product.supplier.name %>
-    email: <%= product.supplier.email %>
-    phone_number: <%= product.supplier.phone_number %>
+<p>
+  supplier:
+  name: <%= product.supplier.name %>
+  email: <%= product.supplier.email %>
+  phone_number: <%= product.supplier.phone_number %>
 </p>
 </div>
 <% end %>
