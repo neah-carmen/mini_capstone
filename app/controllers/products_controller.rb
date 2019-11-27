@@ -9,18 +9,27 @@ class ProductsController < ApplicationController
   end
 
   def create
+    if params[:on_sale] == "False"
+      discount = false
+    elsif params[:on_sale] == "True"
+      discount = true
+    end
+
     @product = Product.new(
       name: params[:name],
       price: params[:price],
       currency_code: params[:currency_code],
       stock: params[:stock],
       description: params[:description],
-      on_sale: params[:on_sale],
       discount: params[:discount],
       supplier_id: params[:supplier_id],
+      on_sale: discount,
     )
-    @product.save
-    redirect_to "/recipes"
+    if @product.save
+      redirect_to "/products/#{@product.id}"
+    else
+      redirect_to "/products"
+    end
   end
 
   def show
