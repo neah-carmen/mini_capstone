@@ -1,21 +1,24 @@
 <h1>All Products</h1>
 <% @products.each do |product| %>
 <div>
+<h3>
+Name: <%= product.name %>
+Price: <%= product.price %>
+</h3>
 <p>
-name: <%= product.name %>
-price: <%= product.price %>
-currency_code: <%= product.currency_code %>
 stock: <%= product.stock %>
 description: <%= product.description %>
 on_sale: <%= product.on_sale %>
 discount: <%= product.discount %>
-<br> formatted:
+</p>
+<p> formatted:
     in_stock: <%= product.in_stock? %>
     formatted_discount: <%= product.formatted_discount %>
     formatted_price: <%= product.formatted_price %>
     total: <%= product.total %>
     formatted_total: <%= product.formatted_total %>
-<br> supplier:
+</p>
+<p> supplier:
     name: <%= product.supplier.name %>
     email: <%= product.supplier.email %>
     phone_number: <%= product.supplier.phone_number %>
