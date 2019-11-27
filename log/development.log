@@ -31611,3 +31611,32 @@ Processing by ProductsController#new as HTML
 Completed 200 OK in 67ms (Views: 66.8ms | ActiveRecord: 0.0ms | Allocations: 5633)
 
 
+Started GET "/products" for ::1 at 2019-11-27 09:08:21 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 25.4ms | Allocations: 8734)
+Completed 200 OK in 120ms (Views: 70.5ms | ActiveRecord: 5.7ms | Allocations: 18635)
+
+
+Started GET "/products/new" for ::1 at 2019-11-27 09:08:23 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 104)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 2219)
+
+
+Started GET "/products/1" for ::1 at 2019-11-27 09:08:25 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36:in `show'
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:23
+  Rendered products/show.html.erb within layouts/application (Duration: 57.6ms | Allocations: 7599)
+Completed 200 OK in 78ms (Views: 62.5ms | ActiveRecord: 5.7ms | Allocations: 10755)
+
+
