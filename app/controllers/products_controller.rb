@@ -9,9 +9,9 @@ class ProductsController < ApplicationController
   end
 
   def create
-    if params[:on_sale] == "False"
+    if params[:on_sale] == "false"
       discount = false
-    elsif params[:on_sale] == "True"
+    elsif params[:on_sale] == "true"
       discount = true
     end
 
