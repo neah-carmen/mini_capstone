@@ -1,5 +1,6 @@
 <h1>Existing an product</h1>
-<form method="patch" action="/products/<%= @product.id %>/edit">
+<form method="post" action="/products/<%= @product.id %>/edit">
+<input type="hidden" name="_method" value="patch" />
 <div>name: <input type="text" name="name" value="<%= @product.name %>">  </div>
 <div>price: <input type="text" name="price" value="<%= @product.price %>">  </div>
 <div>currency_code: <input type="text" name="currency_code" value="<%= @product.currency_code %>">  </div>
@@ -21,3 +22,4 @@
 </div>
 <input type="submit" value="Edit an existing product">
 </form>
+<a href="/products">Back to home</a>
