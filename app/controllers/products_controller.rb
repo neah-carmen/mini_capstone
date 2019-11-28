@@ -64,4 +64,10 @@ class ProductsController < ApplicationController
       render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @product = Product.find_by(id: params[:id])
+    @product.destroy
+    redirect_to "/products/"
+  end
 end

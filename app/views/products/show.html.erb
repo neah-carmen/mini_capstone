@@ -27,5 +27,9 @@
 <p>
   <a href="/products">Back to home</a>
   <a href="/products/<%= @product.id %>/edit">Edit this product</a>
+  <form method="post" action="/products/<%= @product.id %>">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete this product">
+  </form>
 </p>
 </div>
