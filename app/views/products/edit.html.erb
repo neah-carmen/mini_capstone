@@ -1,0 +1,23 @@
+<h1>Existing an product</h1>
+<form method="patch" action="/products/<%= @product.id %>/edit">
+<div>name: <input type="text" name="name" value="<%= @product.name %>">  </div>
+<div>price: <input type="text" name="price" value="<%= @product.price %>">  </div>
+<div>currency_code: <input type="text" name="currency_code" value="<%= @product.currency_code %>">  </div>
+<div>stock: <input type="text" name="stock" value="<%= @product.stock %>">  </div>
+<div>description: <input type="text" name="description" value="<%= @product.description %>">  </div>
+<div>supplier_id:
+  <select name="on_sale">
+    <option value="false">False</option>
+    <option value="true">True</option>
+  </select><br>
+</div>
+<div>discount: <input type="text" name="discount" value="<%= @product.discount %>"></div>
+<div>supplier_id:
+  <select name="supplier_id">
+    <option value="1">Moi Meme Moitie</option>
+    <option value="2">Baby, The Stars Shine Bright</option>
+    <option value="3">Gloomth</option>
+  </select><br>
+</div>
+<input type="submit" value="Edit an existing product">
+</form>

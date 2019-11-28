@@ -36,4 +36,9 @@ class ProductsController < ApplicationController
     @product = Product.find_by(id: params[:id])
     render "show.html.erb"
   end
+
+  def edit
+    @product = Product.find_by(id: params[:id])
+    render "edit.html.erb"
+  end
 end
