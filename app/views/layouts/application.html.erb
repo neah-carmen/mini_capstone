@@ -4,13 +4,23 @@
     <title>MiniCapstone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <a href="/products/new">Add a new product</a>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/products/index" class="brand-logo">EGL Frills</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/products/new">New Product</a></li>
+          <li><a href="/products/show">Product</a></li>
+          <li><a href="/products/edit">Edit Product</a></li>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
