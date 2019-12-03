@@ -32307,3 +32307,320 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.5ms | Allocations: 3268)
 
 
+Started GET "/products/new" for ::1 at 2019-12-02 19:11:18 -0600
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 223)
+Completed 200 OK in 3546ms (Views: 3545.3ms | ActiveRecord: 0.0ms | Allocations: 85835)
+
+
+Started GET "/products/" for ::1 at 2019-12-02 20:12:07 -0600
+  [1m[35m (8.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (26.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 76.7ms | Allocations: 8635)
+Completed 200 OK in 434ms (Views: 355.5ms | ActiveRecord: 57.7ms | Allocations: 27937)
+
+
+Started GET "/products/index.html" for ::1 at 2019-12-02 20:12:18 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36:in `show'
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 12.7ms | Allocations: 2019)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.6ms | Allocations: 3440)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>All Products</h1>
+    2: <div>
+    3: <h3>
+    4:   Name: <%= @product.name %>
+    5:   Price: <%= @product.price %>
+    6: </h3>
+    7: <p>
+  
+app/views/products/show.html.erb:4
+app/controllers/products_controller.rb:37:in `show'
+Started GET "/products/" for ::1 at 2019-12-02 20:16:52 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1106)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.5ms | Allocations: 7572)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/nezumi/Actualize/mini_capstone/config/environment.rb:5)
+Started GET "/products/new" for ::1 at 2019-12-02 20:46:37 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 223)
+Completed 200 OK in 3122ms (Views: 3121.6ms | ActiveRecord: 0.0ms | Allocations: 65720)
+
+
+Started GET "/products" for ::1 at 2019-12-02 20:46:41 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (3.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 106.9ms | Allocations: 10161)
+Completed 200 OK in 228ms (Views: 95.5ms | ActiveRecord: 60.2ms | Allocations: 22799)
+
+
+Started GET "/products/" for ::1 at 2019-12-02 20:46:50 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 926)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.5ms | Allocations: 4494)
+
+
+Started GET "/products/" for ::1 at 2019-12-02 20:51:32 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 926)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.6ms | Allocations: 4493)
+
+
+Started GET "/products/" for ::1 at 2019-12-02 20:52:31 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1095)
+Completed 500 Internal Server Error in 340ms (ActiveRecord: 0.4ms | Allocations: 47486)
+
+
+  
+ActionView::Template::Error (Asset `application.js` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link application.js
+and restart your server):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:   </head>
+    11: 
+    12:   <body>
+  
+app/views/layouts/application.html.erb:9
+app/controllers/products_controller.rb:4:in `index'
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/nezumi/Actualize/mini_capstone/config/environment.rb:5)
+Started GET "/products/" for ::1 at 2019-12-02 20:53:17 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 32.7ms | Allocations: 8635)
+Completed 200 OK in 327ms (Views: 302.0ms | ActiveRecord: 6.0ms | Allocations: 33119)
+
+
+Started GET "/products/" for ::1 at 2019-12-02 20:56:27 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 926)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.4ms | Allocations: 6774)
+
+
+Started GET "/products/index.html" for ::1 at 2019-12-02 20:56:30 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36:in `show'
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 11.3ms | Allocations: 1965)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.5ms | Allocations: 5624)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>All Products</h1>
+    2: <div>
+    3: <h3>
+    4:   Name: <%= @product.name %>
+    5:   Price: <%= @product.price %>
+    6: </h3>
+    7: <p>
+  
+app/views/products/show.html.erb:4
+app/controllers/products_controller.rb:37:in `show'
+Started GET "/products/edit.html" for ::1 at 2019-12-02 20:56:34 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36:in `show'
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1355)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 2196)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>All Products</h1>
+    2: <div>
+    3: <h3>
+    4:   Name: <%= @product.name %>
+    5:   Price: <%= @product.price %>
+    6: </h3>
+    7: <p>
+  
+app/views/products/show.html.erb:4
+app/controllers/products_controller.rb:37:in `show'
+Started GET "/products/show.html" for ::1 at 2019-12-02 20:56:38 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36:in `show'
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1354)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms | Allocations: 2180)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>All Products</h1>
+    2: <div>
+    3: <h3>
+    4:   Name: <%= @product.name %>
+    5:   Price: <%= @product.price %>
+    6: </h3>
+    7: <p>
+  
+app/views/products/show.html.erb:4
+app/controllers/products_controller.rb:37:in `show'
+Started GET "/products/new" for ::1 at 2019-12-02 20:56:48 -0600
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 103)
+Completed 200 OK in 22ms (Views: 21.9ms | ActiveRecord: 0.0ms | Allocations: 6091)
+
+
+Started GET "/products/edit.html" for ::1 at 2019-12-02 20:56:59 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36:in `show'
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1354)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 2181)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>All Products</h1>
+    2: <div>
+    3: <h3>
+    4:   Name: <%= @product.name %>
+    5:   Price: <%= @product.price %>
+    6: </h3>
+    7: <p>
+  
+app/views/products/show.html.erb:4
+app/controllers/products_controller.rb:37:in `show'
+Started GET "/products/" for ::1 at 2019-12-02 20:57:18 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 922)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.7ms | Allocations: 6770)
+
+
+Started GET "/products/7" for ::1 at 2019-12-02 20:57:22 -0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:36:in `show'
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mSupplier Load (20.6ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:23
+  Rendered products/show.html.erb within layouts/application (Duration: 69.2ms | Allocations: 9757)
+Completed 200 OK in 83ms (Views: 54.9ms | ActiveRecord: 26.1ms | Allocations: 16157)
+
+
+Started GET "/products/7/edit" for ::1 at 2019-12-02 20:57:28 -0600
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:41:in `edit'
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (Duration: 3.7ms | Allocations: 232)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.4ms | Allocations: 6757)
+
+
+Started GET "/products/7/edit" for ::1 at 2019-12-02 20:58:41 -0600
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:41:in `edit'
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 222)
+Completed 200 OK in 23ms (Views: 19.7ms | ActiveRecord: 0.5ms | Allocations: 7555)
+
+
+Started GET "/products/" for ::1 at 2019-12-02 20:58:50 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1090)
+Completed 200 OK in 28ms (Views: 27.3ms | ActiveRecord: 0.4ms | Allocations: 7058)
+
+
+Started GET "/products/" for ::1 at 2019-12-02 20:59:09 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 917)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.6ms | Allocations: 6748)
+
+
+Started GET "/products" for ::1 at 2019-12-02 21:18:40 -0600
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1047)
+Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 0.9ms | Allocations: 6880)
+
+
