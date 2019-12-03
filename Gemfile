@@ -43,4 +43,6 @@ gem 'http'
 gem 'rack-cors'
 gem 'jb'
 
-gem 'materialize-sass', '~> 1.0.0'
+gem 'bootstrap', '~> 4.3.1'
+gem 'sprockets-rails'
+gem 'jquery-rails'
