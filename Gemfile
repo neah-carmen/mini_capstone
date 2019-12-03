@@ -42,3 +42,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'http'
 gem 'rack-cors'
 gem 'jb'
+
+gem 'bootstrap', '~> 4.3.1'
+gem 'sprockets-rails'
+gem 'jquery-rails'
